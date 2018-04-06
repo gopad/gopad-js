@@ -1,0 +1,51 @@
+{
+  "private": false,
+  "name": "gopad",
+  "version": "0.1.0",
+  "description": "etherpad for markdown with go",
+  "homepage": "https://github.com/gopad/gopad-js#readme",
+  "license": "Apache-2.0",
+  "author": "Thomas Boerger <thomas@webhippie.de>",
+  "repository": "https://github.com/gopad/gopad-js.git",
+  "bugs": {
+    "url": "https://github.com/gopad/gopad-js/issues",
+    "email": "gopad@webhippie.de"
+  },
+  "scripts": {
+    "clean": "rimraf lib/",
+    "lint": "eslint src/ test/ webpack.config.js",
+    "test": "mocha --colors --recursive --require babel-core/register ./test",
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "watch": "cross-env NODE_ENV=development webpack -d -w"
+  },
+  "main": "lib/gopad.js",
+  "files": [
+    "lib/"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^5.0.5",
+    "rimraf": "^2.6.2",
+    "sinon": "^4.5.0",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "xhr-mock": "^2.3.1"
+  },
+  "keywords": [
+    "etherpad",
+    "markdown"
+  ]
+}
