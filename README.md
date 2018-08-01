@@ -1,6 +1,6 @@
 # Gopad: SDK for Javascript
 
-[![Build Status](http://github.dronehippie.de/api/badges/gopad/gopad-js/status.svg)](http://github.dronehippie.de/gopad/gopad-js)
+[![Build Status](http://drone.gopad.tech/api/badges/gopad/gopad-js/status.svg)](http://drone.gopad.tech/gopad/gopad-js)
 [![Stories in Ready](https://badge.waffle.io/gopad/gopad-api.svg?label=ready&title=Ready)](http://waffle.io/gopad/gopad-api)
 [![Join the Matrix chat at https://matrix.to/#/#gopad:matrix.org](https://img.shields.io/badge/matrix-%23gopad%3Amatrix.org-7bc9a4.svg)](https://matrix.to/#/#gopad:matrix.org)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7ece04b5a0c94808b467f0c46e445194)](https://www.codacy.com/app/gopad/gopad-js?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gopad/gopad-js&amp;utm_campaign=Badge_Grade)
