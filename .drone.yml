@@ -1,79 +1,79 @@
-workspace:
-  base: /srv/app
-  path: src/github.com/gopad/gopad-js
+---
+kind: pipeline
+name: testing
 
-branches:
-  - master
+platform:
+  os: linux
+  arch: amd64
 
-pipeline:
-  cache-restore:
-    image: plugins/s3-cache:1
-    pull: true
-    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
-    restore: true
-    when:
-      local: false
+steps:
+- name: prepare
+  image: webhippie/nodejs:latest
+  pull: always
+  commands:
+  - yarn install --frozen-lockfile
 
-  sdk-prepare:
-    image: webhippie/nodejs:latest
-    pull: true
-    commands:
-      - yarn install --frozen-lockfile
+- name: lint
+  image: webhippie/nodejs:latest
+  pull: always
+  commands:
+  - yarn lint
+  depends_on:
+  - prepare
 
-  sdk-lint:
-    image: webhippie/nodejs:latest
-    pull: true
-    commands:
-      - yarn lint
+- name: test
+  image: webhippie/nodejs:latest
+  pull: always
+  commands:
+  - yarn test
+  depends_on:
+  - prepare
 
-  sdk-build:
-    image: webhippie/nodejs:latest
-    pull: true
-    commands:
-      - yarn build
+- name: build
+  image: webhippie/nodejs:latest
+  pull: always
+  commands:
+  - yarn build
+  depends_on:
+  - prepare
 
-  sdk-test:
-    image: webhippie/nodejs:latest
-    pull: true
-    commands:
-      - yarn test
+- name: release
+  image: plugins/npm:1
+  pull: always
+  settings:
+    token:
+      from_secret: npm_token
+  when:
+    event:
+    - tag
+  depends_on:
+  - build
 
-  # sdk-release:
-  #   image: plugins/npm:1
-  #   pull: true
-  #   secrets: [ npm_token ]
-  #   when:
-  #     event: [ tag ]
-  #     branch: master
+- name: notify
+  image: plugins/matrix:1
+  pull: always
+  settings:
+    username:
+      from_secret: matrix_username
+    password:
+      from_secret: matrix_password
+    roomid:
+      from_secret: matrix_roomid
+  when:
+    event:
+    - push
+    - tag
+    status:
+    - failure
+  depends_on:
+  - prepare
+  - lint
+  - test
+  - build
+  - release
 
-  cache-rebuild:
-    image: plugins/s3-cache:1
-    pull: true
-    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
-    rebuild: true
-    mount:
-      - node_modules/
-    when:
-      local: false
-      event: [ push ]
-      branch: master
-
-  cache-flush:
-    image: plugins/s3-cache:1
-    pull: true
-    secrets: [ cache_s3_endpoint, cache_s3_access_key, cache_s3_secret_key ]
-    flush: true
-    flush_age: 14
-    when:
-      local: false
-      event: [ push ]
-      branch: master
-
-  notify-matrix:
-    image: plugins/matrix:1
-    pull: true
-    secrets: [ matrix_roomid, matrix_username, matrix_password ]
-    when:
-      local: false
-      event: [ push, tag ]
-      status: [ changed, failure ]
+trigger:
+  ref:
+  - refs/heads/master
+  - refs/tags/**
+  - refs/pull/**
