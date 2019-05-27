@@ -3,8 +3,10 @@
     "standard"
   ],
   "env": {
+    "amd": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "mocha": true
   },
   "globals": {
     "localStorage": true,

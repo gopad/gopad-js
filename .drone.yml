@@ -18,24 +18,30 @@ steps:
   pull: always
   commands:
   - yarn lint
-  depends_on:
-  - prepare
 
 - name: test
   image: webhippie/nodejs:latest
   pull: always
   commands:
   - yarn test
-  depends_on:
-  - prepare
 
 - name: build
   image: webhippie/nodejs:latest
   pull: always
   commands:
   - yarn build
-  depends_on:
-  - prepare
+
+- name: codacy
+  image: webhippie/nodejs:latest
+  pull: always
+  environment:
+    CODACY_PROJECT_TOKEN:
+      from_secret: codacy_token
+  commands:
+  - yarn codacy
+  when:
+    instance:
+    - cloud.drone.io
 
 - name: release
   image: plugins/npm:1
@@ -46,8 +52,6 @@ steps:
   when:
     event:
     - tag
-  depends_on:
-  - build
 
 - name: notify
   image: plugins/matrix:1
@@ -65,12 +69,6 @@ steps:
     - tag
     status:
     - failure
-  depends_on:
-  - prepare
-  - lint
-  - test
-  - build
-  - release
 
 trigger:
   ref:

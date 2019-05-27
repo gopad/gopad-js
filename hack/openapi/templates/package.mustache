@@ -1,16 +1,16 @@
 {
-  "name": "gopad",
-  "version": "1.0.0-alpha1",
-  "description": "API_definition_for_Gopad",
-  "homepage": "https://github.com/gopad/gopad-js#readme",
-  "license": "Apache-2.0",
+  "name": "{{{projectName}}}",
+  "version": "{{{projectVersion}}}",
+  "description": "{{{projectDescription}}}",
+  "homepage": "https://github.com/{{gitUserId}}/{{gitRepoId}}#readme",
+  "license": "{{licenseName}}",
   "author": "Thomas Boerger <thomas@webhippie.de>",
-  "repository": "https://github.com/gopad/gopad-js.git",
+  "repository": "https://github.com/{{gitUserId}}/{{gitRepoId}}.git",
   "bugs": {
-    "url": "https://github.com/gopad/gopad-js/issues",
-    "email": "gopad@webhippie.de"
+    "url": "https://github.com/{{gitUserId}}/{{gitRepoId}}/issues",
+    "email": "{{gitUserId}}@webhippie.de"
   },
-  "main": "dist/gopad/index.js",
+  "main": "dist{{#invokerPackage}}/{{invokerPackage}}{{/invokerPackage}}/index.js",
   "scripts": {
     "lint": "eslint src/ test/",
     "test": "nyc --reporter=text mocha --colors --recursive --timeout 10000 --require babel-core/register",
