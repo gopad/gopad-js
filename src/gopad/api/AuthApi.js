@@ -13,9 +13,10 @@
 
 /* eslint-disable no-unused-vars */
 import ApiClient from '../ApiClient'
+import AuthLogin from '../model/AuthLogin'
 import AuthToken from '../model/AuthToken'
 import AuthVerify from '../model/AuthVerify'
-import InlineObject from '../model/InlineObject'
+import GeneralError from '../model/GeneralError'
 /* eslint-enable no-unused-vars */
 
 /**
@@ -37,14 +38,14 @@ export default class AuthApi {
 
   /**
      * Authenticate an user by credentials
-     * @param {module:gopad/model/InlineObject} auth
+     * @param {module:gopad/model/AuthLogin} params The credentials to authenticate
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:gopad/model/AuthToken} and HTTP response
      */
-  loginUserWithHttpInfo (auth) {
-    let postBody = auth
-    // verify the required parameter 'auth' is set
-    if (auth === undefined || auth === null) {
-      throw new Error("Missing the required parameter 'auth' when calling loginUser")
+  loginUserWithHttpInfo (params) {
+    let postBody = params
+    // verify the required parameter 'params' is set
+    if (params === undefined || params === null) {
+      throw new Error("Missing the required parameter 'params' when calling loginUser")
     }
 
     let pathParams = {
@@ -69,11 +70,11 @@ export default class AuthApi {
 
   /**
      * Authenticate an user by credentials
-     * @param {module:gopad/model/InlineObject} auth
+     * @param {module:gopad/model/AuthLogin} params The credentials to authenticate
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:gopad/model/AuthToken}
      */
-  loginUser (auth) {
-    return this.loginUserWithHttpInfo(auth)
+  loginUser (params) {
+    return this.loginUserWithHttpInfo(params)
       .then(function (responseAndData) {
         return responseAndData.data
       })

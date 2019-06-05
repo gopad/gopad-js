@@ -1,6 +1,6 @@
 # Gopad.AuthApi
 
-All URIs are relative to *http://http:/api/v1*
+All URIs are relative to *http://try.gopad.tech/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## loginUser
 
-> AuthToken loginUser(auth)
+> AuthToken loginUser(params)
 
 Authenticate an user by credentials
 
@@ -22,8 +22,8 @@ Authenticate an user by credentials
 import Gopad from 'gopad';
 
 let apiInstance = new Gopad.AuthApi();
-let auth = new Gopad.InlineObject(); // InlineObject | 
-apiInstance.loginUser(auth).then((data) => {
+let params = new Gopad.AuthLogin(); // AuthLogin | The credentials to authenticate
+apiInstance.loginUser(params).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -36,7 +36,7 @@ apiInstance.loginUser(auth).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auth** | [**InlineObject**](InlineObject.md)|  | 
+ **params** | [**AuthLogin**](AuthLogin.md)| The credentials to authenticate | 
 
 ### Return type
 

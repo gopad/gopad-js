@@ -71,8 +71,8 @@ var Gopad = require('gopad');
 
 
 var api = new Gopad.AuthApi()
-var auth = new Gopad.InlineObject(); // {InlineObject} 
-api.loginUser(auth).then(function(data) {
+var params = new Gopad.AuthLogin(); // {AuthLogin} The credentials to authenticate
+api.loginUser(params).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -113,20 +113,37 @@ Class | Method | HTTP request | Description
 
 ## Documentation for models
 
+ - [Gopad.AuthLogin](docs/AuthLogin.md)
  - [Gopad.AuthToken](docs/AuthToken.md)
  - [Gopad.AuthVerify](docs/AuthVerify.md)
- - [Gopad.InlineObject](docs/InlineObject.md)
+ - [Gopad.GeneralError](docs/GeneralError.md)
  - [Gopad.Profile](docs/Profile.md)
  - [Gopad.Team](docs/Team.md)
  - [Gopad.TeamUser](docs/TeamUser.md)
  - [Gopad.TeamUserParams](docs/TeamUserParams.md)
  - [Gopad.User](docs/User.md)
  - [Gopad.UserTeamParams](docs/UserTeamParams.md)
+ - [Gopad.ValidationError](docs/ValidationError.md)
+ - [Gopad.ValidationErrorErrors](docs/ValidationErrorErrors.md)
 
 
 ## Documentation for authorization
 
-All endpoints do not require authorization.
+
+
+### BasicAuth
+
+- **Type**: HTTP basic authentication
+
+
+
+### HeaderAuth
+
+
+- **Type**: API key
+- **API key parameter name**: X-API-Key
+- **Location**: HTTP header
+
 
 
 ## Security

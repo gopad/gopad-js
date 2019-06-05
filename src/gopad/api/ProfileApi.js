@@ -14,7 +14,9 @@
 /* eslint-disable no-unused-vars */
 import ApiClient from '../ApiClient'
 import AuthToken from '../model/AuthToken'
+import GeneralError from '../model/GeneralError'
 import Profile from '../model/Profile'
+import ValidationError from '../model/ValidationError'
 /* eslint-enable no-unused-vars */
 
 /**

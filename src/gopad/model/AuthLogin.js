@@ -14,19 +14,19 @@
 import ApiClient from '../ApiClient'
 
 /**
- * The InlineObject model module.
- * @module gopad/model/InlineObject
+ * The AuthLogin model module.
+ * @module gopad/model/AuthLogin
  * @version 1.0.0-alpha1
  */
-class InlineObject {
+class AuthLogin {
   /**
-     * Constructs a new <code>InlineObject</code>.
-     * @alias module:gopad/model/InlineObject
+     * Constructs a new <code>AuthLogin</code>.
+     * @alias module:gopad/model/AuthLogin
      * @param username {String}
      * @param password {String}
      */
   constructor (username, password) {
-    InlineObject.initialize(this, username, password)
+    AuthLogin.initialize(this, username, password)
   }
 
   /**
@@ -40,15 +40,15 @@ class InlineObject {
   }
 
   /**
-     * Constructs a <code>InlineObject</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>AuthLogin</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:gopad/model/InlineObject} obj Optional instance to populate.
-     * @return {module:gopad/model/InlineObject} The populated <code>InlineObject</code> instance.
+     * @param {module:gopad/model/AuthLogin} obj Optional instance to populate.
+     * @return {module:gopad/model/AuthLogin} The populated <code>AuthLogin</code> instance.
      */
   static constructFromObject (data, obj) {
     if (data) {
-      obj = obj || new InlineObject()
+      obj = obj || new AuthLogin()
 
       if (data.hasOwnProperty('username')) {
         obj['username'] = ApiClient.convertToType(data['username'], 'String')
@@ -64,11 +64,11 @@ class InlineObject {
 /**
  * @member {String} username
  */
-InlineObject.prototype['username'] = undefined
+AuthLogin.prototype['username'] = undefined
 
 /**
  * @member {String} password
  */
-InlineObject.prototype['password'] = undefined
+AuthLogin.prototype['password'] = undefined
 
-export default InlineObject
+export default AuthLogin

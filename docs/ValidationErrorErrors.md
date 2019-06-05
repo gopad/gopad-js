@@ -1,10 +1,10 @@
-# Gopad.InlineObject
+# Gopad.ValidationErrorErrors
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **String** |  | 
-**password** | **String** |  | 
+**field** | **String** |  | [optional] 
+**message** | **String** |  | [optional] 
 
 

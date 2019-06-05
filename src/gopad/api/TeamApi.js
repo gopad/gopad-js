@@ -13,9 +13,11 @@
 
 /* eslint-disable no-unused-vars */
 import ApiClient from '../ApiClient'
+import GeneralError from '../model/GeneralError'
 import Team from '../model/Team'
 import TeamUser from '../model/TeamUser'
 import TeamUserParams from '../model/TeamUserParams'
+import ValidationError from '../model/ValidationError'
 /* eslint-enable no-unused-vars */
 
 /**
@@ -39,7 +41,7 @@ export default class TeamApi {
      * Assign a user to team
      * @param {String} teamId A team UUID or slug
      * @param {module:gopad/model/TeamUserParams} teamUser The team user data to assign
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:gopad/model/GeneralError} and HTTP response
      */
   appendTeamToUserWithHttpInfo (teamId, teamUser) {
     let postBody = teamUser
@@ -65,7 +67,7 @@ export default class TeamApi {
     let authNames = []
     let contentTypes = ['application/json']
     let accepts = ['application/json']
-    let returnType = Object
+    let returnType = GeneralError
     return this.apiClient.callApi(
       '/teams/{team_id}/users', 'POST',
       pathParams, queryParams, headerParams, formParams, postBody,
@@ -77,7 +79,7 @@ export default class TeamApi {
      * Assign a user to team
      * @param {String} teamId A team UUID or slug
      * @param {module:gopad/model/TeamUserParams} teamUser The team user data to assign
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:gopad/model/GeneralError}
      */
   appendTeamToUser (teamId, teamUser) {
     return this.appendTeamToUserWithHttpInfo(teamId, teamUser)
@@ -133,7 +135,7 @@ export default class TeamApi {
   /**
      * Delete a specific team
      * @param {String} teamId A team UUID or slug
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:gopad/model/GeneralError} and HTTP response
      */
   deleteTeamWithHttpInfo (teamId) {
     let postBody = null
@@ -155,7 +157,7 @@ export default class TeamApi {
     let authNames = []
     let contentTypes = []
     let accepts = ['application/json']
-    let returnType = Object
+    let returnType = GeneralError
     return this.apiClient.callApi(
       '/teams/{team_id}', 'DELETE',
       pathParams, queryParams, headerParams, formParams, postBody,
@@ -166,7 +168,7 @@ export default class TeamApi {
   /**
      * Delete a specific team
      * @param {String} teamId A team UUID or slug
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:gopad/model/GeneralError}
      */
   deleteTeam (teamId) {
     return this.deleteTeamWithHttpInfo(teamId)
@@ -179,7 +181,7 @@ export default class TeamApi {
      * Remove a user from team
      * @param {String} teamId A team UUID or slug
      * @param {module:gopad/model/TeamUserParams} teamUser The team user data to delete
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:gopad/model/GeneralError} and HTTP response
      */
   delteTeamFromUserWithHttpInfo (teamId, teamUser) {
     let postBody = teamUser
@@ -205,7 +207,7 @@ export default class TeamApi {
     let authNames = []
     let contentTypes = ['application/json']
     let accepts = ['application/json']
-    let returnType = Object
+    let returnType = GeneralError
     return this.apiClient.callApi(
       '/teams/{team_id}/users', 'DELETE',
       pathParams, queryParams, headerParams, formParams, postBody,
@@ -217,7 +219,7 @@ export default class TeamApi {
      * Remove a user from team
      * @param {String} teamId A team UUID or slug
      * @param {module:gopad/model/TeamUserParams} teamUser The team user data to delete
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:gopad/model/GeneralError}
      */
   delteTeamFromUser (teamId, teamUser) {
     return this.delteTeamFromUserWithHttpInfo(teamId, teamUser)
@@ -313,7 +315,7 @@ export default class TeamApi {
      * Update user perms for team
      * @param {String} teamId A team UUID or slug
      * @param {module:gopad/model/TeamUserParams} teamUser The team user data to update
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:gopad/model/GeneralError} and HTTP response
      */
   permitTeamUserWithHttpInfo (teamId, teamUser) {
     let postBody = teamUser
@@ -339,7 +341,7 @@ export default class TeamApi {
     let authNames = []
     let contentTypes = ['application/json']
     let accepts = ['application/json']
-    let returnType = Object
+    let returnType = GeneralError
     return this.apiClient.callApi(
       '/teams/{team_id}/users', 'PUT',
       pathParams, queryParams, headerParams, formParams, postBody,
@@ -351,7 +353,7 @@ export default class TeamApi {
      * Update user perms for team
      * @param {String} teamId A team UUID or slug
      * @param {module:gopad/model/TeamUserParams} teamUser The team user data to update
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:gopad/model/GeneralError}
      */
   permitTeamUser (teamId, teamUser) {
     return this.permitTeamUserWithHttpInfo(teamId, teamUser)

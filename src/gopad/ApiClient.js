@@ -31,15 +31,17 @@ class ApiClient {
     /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default http://http:/api/v1
+         * @default http://try.gopad.tech/api/v1
          */
-    this.basePath = 'http://http:/api/v1'.replace(/\/+$/, '')
+    this.basePath = 'http://try.gopad.tech/api/v1'.replace(/\/+$/, '')
 
     /**
          * The authentication methods to be included for all API calls.
          * @type {Array.<String>}
          */
     this.authentications = {
+      'BasicAuth': { type: 'basic' },
+      'HeaderAuth': { type: 'apiKey', 'in': 'header', name: 'X-API-Key' }
     }
 
     /**
@@ -545,7 +547,11 @@ class ApiClient {
   hostSettings () {
     return [
       {
-        'url': '///api/v1',
+        'url': 'http://try.gopad.tech/api/v1',
+        'description': 'No description provided'
+      },
+      {
+        'url': 'https://try.gopad.tech/api/v1',
         'description': 'No description provided'
       }
     ]

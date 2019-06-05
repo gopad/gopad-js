@@ -1,6 +1,6 @@
 # Gopad.TeamApi
 
-All URIs are relative to *http://http:/api/v1*
+All URIs are relative to *http://try.gopad.tech/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## appendTeamToUser
 
-> Object appendTeamToUser(teamId, teamUser)
+> GeneralError appendTeamToUser(teamId, teamUser)
 
 Assign a user to team
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 
 ## deleteTeam
 
-> Object deleteTeam(teamId)
+> GeneralError deleteTeam(teamId)
 
 Delete a specific team
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ No authorization required
 
 ## delteTeamFromUser
 
-> Object delteTeamFromUser(teamId, teamUser)
+> GeneralError delteTeamFromUser(teamId, teamUser)
 
 Remove a user from team
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -270,7 +270,7 @@ No authorization required
 
 ## permitTeamUser
 
-> Object permitTeamUser(teamId, teamUser)
+> GeneralError permitTeamUser(teamId, teamUser)
 
 Update user perms for team
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
