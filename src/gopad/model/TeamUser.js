@@ -24,7 +24,7 @@ class TeamUser {
      * @alias module:gopad/model/TeamUser
      * @param teamId {String}
      * @param userId {String}
-     * @param perm {String}
+     * @param perm {module:gopad/model/TeamUser.PermEnum}
      */
   constructor (teamId, userId, perm) {
     TeamUser.initialize(this, teamId, userId, perm)
@@ -77,8 +77,34 @@ TeamUser.prototype['team_id'] = undefined
 TeamUser.prototype['user_id'] = undefined
 
 /**
- * @member {String} perm
+ * @member {module:gopad/model/TeamUser.PermEnum} perm
  */
 TeamUser.prototype['perm'] = undefined
+
+/**
+ * Allowed values for the <code>perm</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TeamUser['PermEnum'] = {
+
+  /**
+     * value: "user"
+     * @const
+     */
+  'user': 'user',
+
+  /**
+     * value: "admin"
+     * @const
+     */
+  'admin': 'admin',
+
+  /**
+     * value: "owner"
+     * @const
+     */
+  'owner': 'owner'
+}
 
 export default TeamUser

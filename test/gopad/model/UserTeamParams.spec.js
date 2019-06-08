@@ -53,12 +53,6 @@
       // expect(instance).to.be.a(Gopad.UserTeamParams);
     })
 
-    it('should have the property user (base name: "user")', function () {
-      // uncomment below and update the code to test the property user
-      // var instane = new Gopad.UserTeamParams();
-      // expect(instance).to.be();
-    })
-
     it('should have the property team (base name: "team")', function () {
       // uncomment below and update the code to test the property team
       // var instane = new Gopad.UserTeamParams();

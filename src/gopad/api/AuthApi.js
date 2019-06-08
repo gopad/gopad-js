@@ -38,14 +38,14 @@ export default class AuthApi {
 
   /**
      * Authenticate an user by credentials
-     * @param {module:gopad/model/AuthLogin} params The credentials to authenticate
+     * @param {module:gopad/model/AuthLogin} authLogin The credentials to authenticate
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:gopad/model/AuthToken} and HTTP response
      */
-  loginUserWithHttpInfo (params) {
-    let postBody = params
-    // verify the required parameter 'params' is set
-    if (params === undefined || params === null) {
-      throw new Error("Missing the required parameter 'params' when calling loginUser")
+  loginUserWithHttpInfo (authLogin) {
+    let postBody = authLogin
+    // verify the required parameter 'authLogin' is set
+    if (authLogin === undefined || authLogin === null) {
+      throw new Error("Missing the required parameter 'authLogin' when calling loginUser")
     }
 
     let pathParams = {
@@ -70,11 +70,11 @@ export default class AuthApi {
 
   /**
      * Authenticate an user by credentials
-     * @param {module:gopad/model/AuthLogin} params The credentials to authenticate
+     * @param {module:gopad/model/AuthLogin} authLogin The credentials to authenticate
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:gopad/model/AuthToken}
      */
-  loginUser (params) {
-    return this.loginUserWithHttpInfo(params)
+  loginUser (authLogin) {
+    return this.loginUserWithHttpInfo(authLogin)
       .then(function (responseAndData) {
         return responseAndData.data
       })

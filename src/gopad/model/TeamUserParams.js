@@ -22,12 +22,11 @@ class TeamUserParams {
   /**
      * Constructs a new <code>TeamUserParams</code>.
      * @alias module:gopad/model/TeamUserParams
-     * @param team {String}
      * @param user {String}
-     * @param perm {String}
+     * @param perm {module:gopad/model/TeamUserParams.PermEnum}
      */
-  constructor (team, user, perm) {
-    TeamUserParams.initialize(this, team, user, perm)
+  constructor (user, perm) {
+    TeamUserParams.initialize(this, user, perm)
   }
 
   /**
@@ -35,8 +34,7 @@ class TeamUserParams {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-  static initialize (obj, team, user, perm) {
-    obj['team'] = team
+  static initialize (obj, user, perm) {
     obj['user'] = user
     obj['perm'] = perm
   }
@@ -52,9 +50,6 @@ class TeamUserParams {
     if (data) {
       obj = obj || new TeamUserParams()
 
-      if (data.hasOwnProperty('team')) {
-        obj['team'] = ApiClient.convertToType(data['team'], 'String')
-      }
       if (data.hasOwnProperty('user')) {
         obj['user'] = ApiClient.convertToType(data['user'], 'String')
       }
@@ -67,18 +62,39 @@ class TeamUserParams {
 }
 
 /**
- * @member {String} team
- */
-TeamUserParams.prototype['team'] = undefined
-
-/**
  * @member {String} user
  */
 TeamUserParams.prototype['user'] = undefined
 
 /**
- * @member {String} perm
+ * @member {module:gopad/model/TeamUserParams.PermEnum} perm
  */
 TeamUserParams.prototype['perm'] = undefined
+
+/**
+ * Allowed values for the <code>perm</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TeamUserParams['PermEnum'] = {
+
+  /**
+     * value: "user"
+     * @const
+     */
+  'user': 'user',
+
+  /**
+     * value: "admin"
+     * @const
+     */
+  'admin': 'admin',
+
+  /**
+     * value: "owner"
+     * @const
+     */
+  'owner': 'owner'
+}
 
 export default TeamUserParams

@@ -71,6 +71,12 @@
       // expect(instance).to.be();
     })
 
+    it('should have the property password (base name: "password")', function () {
+      // uncomment below and update the code to test the property password
+      // var instane = new Gopad.User();
+      // expect(instance).to.be();
+    })
+
     it('should have the property email (base name: "email")', function () {
       // uncomment below and update the code to test the property email
       // var instane = new Gopad.User();

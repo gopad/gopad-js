@@ -59,6 +59,9 @@ class User {
       if (data.hasOwnProperty('username')) {
         obj['username'] = ApiClient.convertToType(data['username'], 'String')
       }
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String')
+      }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String')
       }
@@ -93,6 +96,11 @@ User.prototype['slug'] = undefined
  * @member {String} username
  */
 User.prototype['username'] = undefined
+
+/**
+ * @member {String} password
+ */
+User.prototype['password'] = undefined
 
 /**
  * @member {String} email

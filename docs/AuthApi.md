@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## loginUser
 
-> AuthToken loginUser(params)
+> AuthToken loginUser(authLogin)
 
 Authenticate an user by credentials
 
@@ -22,8 +22,8 @@ Authenticate an user by credentials
 import Gopad from 'gopad';
 
 let apiInstance = new Gopad.AuthApi();
-let params = new Gopad.AuthLogin(); // AuthLogin | The credentials to authenticate
-apiInstance.loginUser(params).then((data) => {
+let authLogin = new Gopad.AuthLogin(); // AuthLogin | The credentials to authenticate
+apiInstance.loginUser(authLogin).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -36,7 +36,7 @@ apiInstance.loginUser(params).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | [**AuthLogin**](AuthLogin.md)| The credentials to authenticate | 
+ **authLogin** | [**AuthLogin**](AuthLogin.md)| The credentials to authenticate | 
 
 ### Return type
 

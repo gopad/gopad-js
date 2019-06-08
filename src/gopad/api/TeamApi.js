@@ -183,15 +183,15 @@ export default class TeamApi {
      * @param {module:gopad/model/TeamUserParams} teamUser The team user data to delete
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:gopad/model/GeneralError} and HTTP response
      */
-  delteTeamFromUserWithHttpInfo (teamId, teamUser) {
+  deleteTeamFromUserWithHttpInfo (teamId, teamUser) {
     let postBody = teamUser
     // verify the required parameter 'teamId' is set
     if (teamId === undefined || teamId === null) {
-      throw new Error("Missing the required parameter 'teamId' when calling delteTeamFromUser")
+      throw new Error("Missing the required parameter 'teamId' when calling deleteTeamFromUser")
     }
     // verify the required parameter 'teamUser' is set
     if (teamUser === undefined || teamUser === null) {
-      throw new Error("Missing the required parameter 'teamUser' when calling delteTeamFromUser")
+      throw new Error("Missing the required parameter 'teamUser' when calling deleteTeamFromUser")
     }
 
     let pathParams = {
@@ -221,8 +221,8 @@ export default class TeamApi {
      * @param {module:gopad/model/TeamUserParams} teamUser The team user data to delete
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:gopad/model/GeneralError}
      */
-  delteTeamFromUser (teamId, teamUser) {
-    return this.delteTeamFromUserWithHttpInfo(teamId, teamUser)
+  deleteTeamFromUser (teamId, teamUser) {
+    return this.deleteTeamFromUserWithHttpInfo(teamId, teamUser)
       .then(function (responseAndData) {
         return responseAndData.data
       })

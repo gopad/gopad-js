@@ -9,3 +9,16 @@ Name | Type | Description | Notes
 **perm** | **String** |  | 
 
 
+
+## Enum: PermEnum
+
+
+* `user` (value: `"user"`)
+
+* `admin` (value: `"admin"`)
+
+* `owner` (value: `"owner"`)
+
+
+
+

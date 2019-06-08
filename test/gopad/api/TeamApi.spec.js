@@ -77,10 +77,10 @@
         done()
       })
     })
-    describe('delteTeamFromUser', function () {
-      it('should call delteTeamFromUser successfully', function (done) {
-        // uncomment below and update the code to test delteTeamFromUser
-        // instance.delteTeamFromUser(function(error) {
+    describe('deleteTeamFromUser', function () {
+      it('should call deleteTeamFromUser successfully', function (done) {
+        // uncomment below and update the code to test deleteTeamFromUser
+        // instance.deleteTeamFromUser(function(error) {
         //  if (error) throw error;
         // expect().to.be();
         // });

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**appendTeamToUser**](TeamApi.md#appendTeamToUser) | **POST** /teams/{team_id}/users | Assign a user to team
 [**createTeam**](TeamApi.md#createTeam) | **POST** /teams | Create a new team
 [**deleteTeam**](TeamApi.md#deleteTeam) | **DELETE** /teams/{team_id} | Delete a specific team
-[**delteTeamFromUser**](TeamApi.md#delteTeamFromUser) | **DELETE** /teams/{team_id}/users | Remove a user from team
+[**deleteTeamFromUser**](TeamApi.md#deleteTeamFromUser) | **DELETE** /teams/{team_id}/users | Remove a user from team
 [**listTeamUsers**](TeamApi.md#listTeamUsers) | **GET** /teams/{team_id}/users | Fetch all users assigned to team
 [**listTeams**](TeamApi.md#listTeams) | **GET** /teams | Fetch all available teams
 [**permitTeamUser**](TeamApi.md#permitTeamUser) | **PUT** /teams/{team_id}/users | Update user perms for team
@@ -144,9 +144,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## delteTeamFromUser
+## deleteTeamFromUser
 
-> GeneralError delteTeamFromUser(teamId, teamUser)
+> GeneralError deleteTeamFromUser(teamId, teamUser)
 
 Remove a user from team
 
@@ -158,7 +158,7 @@ import Gopad from 'gopad';
 let apiInstance = new Gopad.TeamApi();
 let teamId = "teamId_example"; // String | A team UUID or slug
 let teamUser = new Gopad.TeamUserParams(); // TeamUserParams | The team user data to delete
-apiInstance.delteTeamFromUser(teamId, teamUser).then((data) => {
+apiInstance.deleteTeamFromUser(teamId, teamUser).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

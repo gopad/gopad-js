@@ -70,8 +70,8 @@ var Gopad = require('gopad');
 
 
 var api = new Gopad.AuthApi()
-var params = new Gopad.AuthLogin(); // {AuthLogin} The credentials to authenticate
-api.loginUser(params).then(function(data) {
+var authLogin = new Gopad.AuthLogin(); // {AuthLogin} The credentials to authenticate
+api.loginUser(authLogin).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -93,7 +93,7 @@ Class | Method | HTTP request | Description
 *Gopad.TeamApi* | [**appendTeamToUser**](docs/TeamApi.md#appendTeamToUser) | **POST** /teams/{team_id}/users | Assign a user to team
 *Gopad.TeamApi* | [**createTeam**](docs/TeamApi.md#createTeam) | **POST** /teams | Create a new team
 *Gopad.TeamApi* | [**deleteTeam**](docs/TeamApi.md#deleteTeam) | **DELETE** /teams/{team_id} | Delete a specific team
-*Gopad.TeamApi* | [**delteTeamFromUser**](docs/TeamApi.md#delteTeamFromUser) | **DELETE** /teams/{team_id}/users | Remove a user from team
+*Gopad.TeamApi* | [**deleteTeamFromUser**](docs/TeamApi.md#deleteTeamFromUser) | **DELETE** /teams/{team_id}/users | Remove a user from team
 *Gopad.TeamApi* | [**listTeamUsers**](docs/TeamApi.md#listTeamUsers) | **GET** /teams/{team_id}/users | Fetch all users assigned to team
 *Gopad.TeamApi* | [**listTeams**](docs/TeamApi.md#listTeams) | **GET** /teams | Fetch all available teams
 *Gopad.TeamApi* | [**permitTeamUser**](docs/TeamApi.md#permitTeamUser) | **PUT** /teams/{team_id}/users | Update user perms for team
