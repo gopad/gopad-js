@@ -1,3 +1,10 @@
-invokerPackage: gopad
-projectName: gopad
-usePromises: true
+---
+npmName: gopad
+supportsES6: true
+useSingleRequestParameter: true
+withNodeImports: true
+withSeparateModelsAndApi: true
+apiPackage: api
+modelPackage: model
+
+...

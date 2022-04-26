@@ -1,7 +1,7 @@
 {
   "name": "gopad",
   "version": "1.0.0-alpha1",
-  "description": "API_definition_for_Gopad",
+  "description": "OpenAPI client for gopad",
   "homepage": "https://github.com/gopad/gopad-js#readme",
   "license": "Apache-2.0",
   "author": "Thomas Boerger <thomas@webhippie.de>",
@@ -10,42 +10,25 @@
     "url": "https://github.com/gopad/gopad-js/issues",
     "email": "gopad@webhippie.de"
   },
-  "main": "dist/gopad/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "lint": "eslint src/ test/",
-    "test": "nyc --reporter=text mocha --colors --recursive --timeout 10000 --require babel-core/register",
-    "codacy": "nyc report --reporter=text-lcov | codacy-coverage",
-    "build": "babel src -d dist"
+    "build": "tsc --outDir dist/",
+    "format": "prettier -w '**/*.{js,ts}'"
   },
   "browser": {
     "fs": false
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "superagent": "3.7.0"
+    "axios": "^0.27.0"
   },
   "devDependencies": {
-    "babel-core": "6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "codacy-coverage": "^3.4.0",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "expect.js": "^0.3.1",
-    "mocha": "^5.2.0",
-    "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^14.1.1",
-    "sinon": "^7.2.0"
+    "@types/node": "12.20.50",
+    "prettier": "2.6.2",
+    "typescript": "4.6.3"
   },
-  "files": [
-    "dist"
-  ],
   "keywords": [
-    "etherpad",
-    "markdown"
+    "minecraft",
+    "technic"
   ]
 }

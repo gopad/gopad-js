@@ -8,14 +8,14 @@ else
     ROOT=$(realpath -e $(dirname $0)/..)
 fi
 
-SPEC=${SPEC:-https://dl.gopad.tech/openapi/1.0.0-alpha1.yml}
+SPEC=${SPEC:-https://dl.gopad.eu/openapi/1.0.0-alpha1.yml}
 
 docker run --rm \
 	-v ${ROOT}:/generate \
-	openapitools/openapi-generator-cli:v4.0.0 \
+	openapitools/openapi-generator-cli:v5.4.0 \
 	generate \
 	-c /generate/openapi.yml \
-	-g javascript \
+	-g typescript-axios \
 	--git-repo-id gopad-js \
 	--git-user-id gopad \
 	--http-user-agent gopad-js/1.0.0-alpha1 \
@@ -26,5 +26,5 @@ docker run --rm \
 
 pushd ${ROOT}
 	yarn install
-	yarn lint --fix
+	yarn format
 popd
