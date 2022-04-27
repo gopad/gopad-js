@@ -1,7 +1,7 @@
 {
   "name": "gopad",
   "version": "1.0.0-alpha1",
-  "description": "OpenAPI client for gopad",
+  "description": "OpenAPI client for Gopad",
   "homepage": "https://github.com/gopad/gopad-js#readme",
   "license": "Apache-2.0",
   "author": "Thomas Boerger <thomas@webhippie.de>",
