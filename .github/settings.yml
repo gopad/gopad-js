@@ -3,7 +3,7 @@ repository:
   name: gopad-js
   description: "Gopad: SDK for Javascript"
   homepage: https://gopad.eu
-  topics: gopad, etherpad, sdk, openapi, javascript
+  topics: gopad, etherpad, sdk, client, grpc, javascript
 
   private: false
   has_issues: true
