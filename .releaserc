@@ -116,19 +116,25 @@
             }
         ],
         [
-            "@semantic-release/git",
+            "@semantic-release/npm",
             {
-                "message": "chore: release ${nextRelease.version}",
-                "assets": ["package.json", "CHANGELOG.md", "openapi.yml", "api/*", "model/*"]
+                "npmPublish": true,
+                "tarballDir": "dist"
             }
         ],
         [
-            "@semantic-release/npm",
+            "@semantic-release/git",
             {
-              "npmPublish": true,
-              "tarballDir": "dist"
+                "message": "chore: release ${nextRelease.version}",
+                "assets": [
+                    "package.json",
+                    "CHANGELOG.md",
+                    "openapi.yml",
+                    "api/*",
+                    "model/*"
+                ]
             }
-          ],
+        ],
         [
             "@semantic-release/github",
             {
