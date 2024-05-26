@@ -26,9 +26,17 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
+      - name: Install generator
+        run: |
+          npm install @openapitools/openapi-generator-cli -g
+
       - name: Run install
         id: deps
         run: npm install --ci
+
+      - name: Run generate
+        id: generate
+        run: bash hack/generate-client.sh
 
       - name: Run build
         id: build
