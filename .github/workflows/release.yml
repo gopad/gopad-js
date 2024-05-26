@@ -20,12 +20,6 @@ jobs:
         with:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
-      - name: Setup nodejs
-        id: nodejs
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
-
       - name: Semantic release
         uses: cycjimmy/semantic-release-action@v3
         env:
@@ -33,8 +27,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           extra_plugins: |
-            @semantic-release/exec@2.3.0
-            conventional-changelog-conventionalcommits@8.0.0
+            @semantic-release/exec
+            conventional-changelog-conventionalcommits@7.0.2
 
       - name: Write buildtime
         run: date >| .github/RELEASE
