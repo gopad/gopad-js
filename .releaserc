@@ -110,16 +110,30 @@
             }
         ],
         [
-            "@semantic-release/git",
+            "@semantic-release/exec",
             {
-                "message": "chore: release ${nextRelease.version}",
-                "assets": ["CHANGELOG.md"]
+                "prepareCmd": "./hack/semantic-version.sh ${nextRelease.version} && ./hack/generate-client.sh"
             }
         ],
         [
+            "@semantic-release/git",
+            {
+                "message": "chore: release ${nextRelease.version}",
+                "assets": ["package.json", "CHANGELOG.md", "openapi.yml", "api/*", "model/*"]
+            }
+        ],
+        [
+            "@semantic-release/npm",
+            {
+              "npmPublish": true,
+              "tarballDir": "dist"
+            }
+          ],
+        [
             "@semantic-release/github",
             {
-                "publish": true
+                "publish": true,
+                "assets": "dist/*.tgz"
             }
         ]
     ]

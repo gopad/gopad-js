@@ -8,6 +8,7 @@ name: release
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   release:
@@ -23,9 +24,11 @@ jobs:
         uses: cycjimmy/semantic-release-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           extra_plugins: |
-            conventional-changelog-conventionalcommits@6.1.0
+            @semantic-release/exec@2.3.0
+            conventional-changelog-conventionalcommits@8.0.0
 
       - name: Write buildtime
         run: date >| .github/RELEASE
@@ -34,7 +37,7 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           author_name: GitHub Actions
-          author_email: github@cloudhippie.de
+          author_email: github@webhippie.de
           add: .github/RELEASE
           message: "docs: automated release update [skip ci]"
           push: true

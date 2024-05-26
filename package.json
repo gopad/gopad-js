@@ -1,0 +1,41 @@
+{
+  "name": "gopad",
+  "version": "1.0.0",
+  "description": "OpenAPI client for Gopad",
+  "homepage": "https://github.com/gopad/gopad-js#readme",
+  "license": "Apache-2.0",
+  "author": "Thomas Boerger <thomas@webhippie.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gopad/gopad-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gopad/gopad-js/issues",
+    "email": "gopad@webhippie.de"
+  },
+  "keywords": [
+    "axios",
+    "typescript",
+    "openapi-client",
+    "openapi-generator",
+    "etherpad",
+    "gopad"
+  ],
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf dist/",
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "format": "prettier -w '**/*.{js,ts}'"
+  },
+  "dependencies": {
+    "axios": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "12.11.5 - 12.20.42",
+    "prettier": "^3.2.5",
+    "typescript": "^4.0 || ^5.0"
+  }
+}

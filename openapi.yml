@@ -1,0 +1,11 @@
+---
+npmName: gopad
+npmVersion: 1.0.0
+supportsES6: true
+useSingleRequestParameter: true
+withNodeImports: true
+withSeparateModelsAndApi: true
+apiPackage: api
+modelPackage: model
+
+...
