@@ -1,6 +1,6 @@
 ---
-npmName: gopad
-npmVersion: 1.0.0
+npmName: gopadjs
+npmVersion: 0.0.0
 supportsES6: true
 useSingleRequestParameter: true
 withNodeImports: true
