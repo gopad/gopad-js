@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/gopad/gopad-js/compare/v1.0.0...v1.0.1) (2024-05-26)
+
+
+### Bugfixes
+
+* make sure to update package version ([7c2abd2](https://github.com/gopad/gopad-js/commit/7c2abd226d6996bb9f792ae796c28f6b26750265))
+
 ## 1.0.0 (2024-05-26)
 
 
