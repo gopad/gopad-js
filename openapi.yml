@@ -7,5 +7,6 @@ withNodeImports: true
 withSeparateModelsAndApi: true
 apiPackage: api
 modelPackage: model
+enablePostProcessFile: true
 
 ...

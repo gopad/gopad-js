@@ -20,6 +20,10 @@ jobs:
         with:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
+      - name: Install generator
+        run: |
+          npm install @openapitools/openapi-generator-cli -g
+
       - name: Semantic release
         uses: cycjimmy/semantic-release-action@v3
         env:
