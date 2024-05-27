@@ -48,7 +48,9 @@
                 };
               };
 
-              packages = with pkgs; [];
+              packages = with pkgs; [
+                openapi-generator-cli
+              ];
             };
           };
         };

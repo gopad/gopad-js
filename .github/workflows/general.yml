@@ -15,11 +15,9 @@ jobs:
 
     steps:
       - name: Checkout source
-        id: source
         uses: actions/checkout@v4
 
       - name: Setup nodejs
-        id: nodejs
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
@@ -27,19 +25,15 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install generator
-        run: |
-          npm install @openapitools/openapi-generator-cli -g
-
-      - name: Run install
-        id: deps
-        run: npm install --ci
+        run: npm install @openapitools/openapi-generator-cli -g
 
       - name: Run generate
-        id: generate
         run: bash hack/generate-client.sh
 
+      - name: Run install
+        run: npm install --ci
+
       - name: Run build
-        id: build
         run: npm run build
 
 ...
