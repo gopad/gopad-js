@@ -110,9 +110,58 @@
             }
         ],
         [
-            "@semantic-release/exec",
+            "semantic-release-replace-plugin",
             {
-                "prepareCmd": "./hack/semantic-version.sh ${nextRelease.version} && ./hack/generate-client.sh"
+                "replacements": [
+                    {
+                        "files": [
+                            "openapi.yml"
+                        ],
+                        "from": "npmVersion: .*",
+                        "to": "npmVersion: ${nextRelease.version}",
+                        "results": [
+                            {
+                                "file": "openapi.yml",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    },
+                    {
+                        "files": [
+                            "README.md"
+                        ],
+                        "from": "Package version: .*",
+                        "to": "Package version:${nextRelease.version}",
+                        "results": [
+                            {
+                                "file": "README.md",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    },
+                    {
+                        "files": [
+                            "README.md"
+                        ],
+                        "from": "gopadjs@.*",
+                        "to": "gopadjs@${nextRelease.version}",
+                        "results": [
+                            {
+                                "file": "README.md",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    }
+                ]
             }
         ],
         [
@@ -127,12 +176,10 @@
             {
                 "message": "chore: release ${nextRelease.version}",
                 "assets": [
-                    "package.json",
                     "CHANGELOG.md",
-                    "README.md",
+                    "package.json",
                     "openapi.yml",
-                    "api/*",
-                    "model/*"
+                    "README.md"
                 ]
             }
         ],

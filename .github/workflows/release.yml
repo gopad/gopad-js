@@ -30,7 +30,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           extra_plugins: |
-            @semantic-release/exec
+            semantic-release-replace-plugin@1.2.7
             conventional-changelog-conventionalcommits@6.1.0
 
       - name: Write buildtime

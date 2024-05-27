@@ -17,6 +17,9 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
+      - name: Install generator
+        run: npm install @openapitools/openapi-generator-cli -g
+
       - name: Setup nodejs
         uses: actions/setup-node@v4
         with:
@@ -24,14 +27,11 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
-      - name: Install generator
-        run: npm install @openapitools/openapi-generator-cli -g
+      - name: Run install
+        run: npm install --ci
 
       - name: Run generate
         run: bash hack/generate-client.sh
-
-      - name: Run install
-        run: npm install --ci
 
       - name: Run build
         run: npm run build
