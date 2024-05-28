@@ -134,7 +134,7 @@
                             "README.md"
                         ],
                         "from": "Package version: .*",
-                        "to": "Package version:${nextRelease.version}",
+                        "to": "Package version: ${nextRelease.version}",
                         "results": [
                             {
                                 "file": "README.md",
