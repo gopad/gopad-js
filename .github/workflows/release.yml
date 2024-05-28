@@ -28,15 +28,24 @@ jobs:
       - name: Install generator
         run: npm install @openapitools/openapi-generator-cli -g
 
-      - name: Semantic release
-        uses: cycjimmy/semantic-release-action@v3
+      - name: Install releaser
+        run: >-
+          npm install -g
+            conventional-changelog-conventionalcommits@6.1.0
+            semantic-release
+            @semantic-release/commit-analyzer
+            @semantic-release/release-notes-generator
+            @semantic-release/changelog
+            @semantic-release/git
+            @semantic-release/github
+            @semantic-release/npm
+            semantic-release-replace-plugin
+
+      - name: Run releaser
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        with:
-          extra_plugins: |
-            semantic-release-replace-plugin@1.2.7
-            conventional-changelog-conventionalcommits@6.1.0
+        run: semantic-release
 
       - name: Write buildtime
         run: date >| .github/RELEASE
