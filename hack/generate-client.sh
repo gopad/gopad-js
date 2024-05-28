@@ -20,7 +20,7 @@ pushd "${ROOT}" >/dev/null
     echo "> deleting apis and models"
     rm -rf api model
 
-    export TS_POST_PROCESS_FILE=" npx prettier -w"
+    export TS_POST_PROCESS_FILE="npx prettier -w"
 
     openapi-generator-cli \
         generate \
