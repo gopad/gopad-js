@@ -25,9 +25,6 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: Install generator
-        run: npm install @openapitools/openapi-generator-cli -g
-
       - name: Install releaser
         run: |
           npm install -g \
