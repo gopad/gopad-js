@@ -179,7 +179,8 @@
                     "CHANGELOG.md",
                     "package.json",
                     "openapi.yml",
-                    "README.md"
+                    "README.md",
+                    "package-lock.json"
                 ]
             }
         ],
