@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/gopad/gopad-js/compare/v1.0.1...v1.1.0) (2024-05-28)
+
+
+### Features
+
+* automated openapi client update ([df204de](https://github.com/gopad/gopad-js/commit/df204de5a528c9d20c35f9b3d26ae0d46eb9d420))
+
 ## [1.0.1](https://github.com/gopad/gopad-js/compare/v1.0.0...v1.0.1) (2024-05-26)
 
 
