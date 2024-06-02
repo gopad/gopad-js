@@ -12,7 +12,22 @@
  * Do not edit the class manually.
  */
 
-export * from "./api/auth-api";
-export * from "./api/profile-api";
-export * from "./api/team-api";
-export * from "./api/user-api";
+/**
+ *
+ * @export
+ * @interface AuthToken
+ */
+export interface AuthToken {
+  /**
+   *
+   * @type {string}
+   * @memberof AuthToken
+   */
+  token: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AuthToken
+   */
+  expires_at?: string | null;
+}

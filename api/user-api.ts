@@ -109,6 +109,10 @@ export const UserApiAxiosParamCreator = function (
         configuration,
       );
 
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
       localVarHeaderParameter["Content-Type"] = "application/json";
 
       setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -172,6 +176,10 @@ export const UserApiAxiosParamCreator = function (
         "X-API-Key",
         configuration,
       );
+
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       localVarHeaderParameter["Content-Type"] = "application/json";
 
@@ -240,6 +248,10 @@ export const UserApiAxiosParamCreator = function (
         configuration,
       );
 
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
       setSearchParams(localVarUrlObj, localVarQueryParameter);
       let headersFromBaseOptions =
         baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -303,6 +315,10 @@ export const UserApiAxiosParamCreator = function (
         "X-API-Key",
         configuration,
       );
+
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       localVarHeaderParameter["Content-Type"] = "application/json";
 
@@ -380,6 +396,10 @@ export const UserApiAxiosParamCreator = function (
         "X-API-Key",
         configuration,
       );
+
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (search !== undefined) {
         localVarQueryParameter["search"] = search;
@@ -463,6 +483,10 @@ export const UserApiAxiosParamCreator = function (
         "X-API-Key",
         configuration,
       );
+
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       if (search !== undefined) {
         localVarQueryParameter["search"] = search;
@@ -548,6 +572,10 @@ export const UserApiAxiosParamCreator = function (
         configuration,
       );
 
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
       localVarHeaderParameter["Content-Type"] = "application/json";
 
       setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -615,6 +643,10 @@ export const UserApiAxiosParamCreator = function (
         configuration,
       );
 
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
       setSearchParams(localVarUrlObj, localVarQueryParameter);
       let headersFromBaseOptions =
         baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -678,6 +710,10 @@ export const UserApiAxiosParamCreator = function (
         "X-API-Key",
         configuration,
       );
+
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
 
       localVarHeaderParameter["Content-Type"] = "application/json";
 
