@@ -42,6 +42,12 @@ import {
   operationServerMap,
 } from "../base";
 // @ts-ignore
+import type { AuthLogin } from "../model";
+// @ts-ignore
+import type { AuthToken } from "../model";
+// @ts-ignore
+import type { AuthVerify } from "../model";
+// @ts-ignore
 import type { Notification } from "../model";
 /**
  * AuthApi - axios parameter creator
@@ -161,6 +167,170 @@ export const AuthApiAxiosParamCreator = function (
         options: localVarRequestOptions,
       };
     },
+    /**
+     *
+     * @summary Authenticate an user by credentials
+     * @param {AuthLogin} authLogin The credentials to authenticate
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    loginAuth: async (
+      authLogin: AuthLogin,
+      options: RawAxiosRequestConfig = {},
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'authLogin' is not null or undefined
+      assertParamExists("loginAuth", "authLogin", authLogin);
+      const localVarPath = `/auth/login`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "POST",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      localVarHeaderParameter["Content-Type"] = "application/json";
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        authLogin,
+        localVarRequestOptions,
+        configuration,
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @summary Refresh an auth token before it expires
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    refreshAuth: async (
+      options: RawAxiosRequestConfig = {},
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/auth/refresh`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication Cookie required
+      await setApiKeyToObject(localVarHeaderParameter, "Cookie", configuration);
+
+      // authentication Basic required
+      // http basic authentication required
+      setBasicAuthToObject(localVarRequestOptions, configuration);
+
+      // authentication Header required
+      await setApiKeyToObject(
+        localVarHeaderParameter,
+        "X-API-Key",
+        configuration,
+      );
+
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @summary Verify validity for an authentication token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    verifyAuth: async (
+      options: RawAxiosRequestConfig = {},
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/auth/verify`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      // authentication Cookie required
+      await setApiKeyToObject(localVarHeaderParameter, "Cookie", configuration);
+
+      // authentication Basic required
+      // http basic authentication required
+      setBasicAuthToObject(localVarRequestOptions, configuration);
+
+      // authentication Header required
+      await setApiKeyToObject(
+        localVarHeaderParameter,
+        "X-API-Key",
+        configuration,
+      );
+
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
   };
 };
 
@@ -242,6 +412,86 @@ export const AuthApiFp = function (configuration?: Configuration) {
           configuration,
         )(axios, localVarOperationServerBasePath || basePath);
     },
+    /**
+     *
+     * @summary Authenticate an user by credentials
+     * @param {AuthLogin} authLogin The credentials to authenticate
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async loginAuth(
+      authLogin: AuthLogin,
+      options?: RawAxiosRequestConfig,
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthToken>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.loginAuth(
+        authLogin,
+        options,
+      );
+      const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+      const localVarOperationServerBasePath =
+        operationServerMap["AuthApi.loginAuth"]?.[localVarOperationServerIndex]
+          ?.url;
+      return (axios, basePath) =>
+        createRequestFunction(
+          localVarAxiosArgs,
+          globalAxios,
+          BASE_PATH,
+          configuration,
+        )(axios, localVarOperationServerBasePath || basePath);
+    },
+    /**
+     *
+     * @summary Refresh an auth token before it expires
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async refreshAuth(
+      options?: RawAxiosRequestConfig,
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthToken>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.refreshAuth(options);
+      const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+      const localVarOperationServerBasePath =
+        operationServerMap["AuthApi.refreshAuth"]?.[
+          localVarOperationServerIndex
+        ]?.url;
+      return (axios, basePath) =>
+        createRequestFunction(
+          localVarAxiosArgs,
+          globalAxios,
+          BASE_PATH,
+          configuration,
+        )(axios, localVarOperationServerBasePath || basePath);
+    },
+    /**
+     *
+     * @summary Verify validity for an authentication token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async verifyAuth(
+      options?: RawAxiosRequestConfig,
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthVerify>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.verifyAuth(options);
+      const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+      const localVarOperationServerBasePath =
+        operationServerMap["AuthApi.verifyAuth"]?.[localVarOperationServerIndex]
+          ?.url;
+      return (axios, basePath) =>
+        createRequestFunction(
+          localVarAxiosArgs,
+          globalAxios,
+          BASE_PATH,
+          configuration,
+        )(axios, localVarOperationServerBasePath || basePath);
+    },
   };
 };
 
@@ -293,6 +543,43 @@ export const AuthApiFactory = function (
           requestParameters.state,
           options,
         )
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @summary Authenticate an user by credentials
+     * @param {AuthApiLoginAuthRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    loginAuth(
+      requestParameters: AuthApiLoginAuthRequest,
+      options?: RawAxiosRequestConfig,
+    ): AxiosPromise<AuthToken> {
+      return localVarFp
+        .loginAuth(requestParameters.authLogin, options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @summary Refresh an auth token before it expires
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    refreshAuth(options?: RawAxiosRequestConfig): AxiosPromise<AuthToken> {
+      return localVarFp
+        .refreshAuth(options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @summary Verify validity for an authentication token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    verifyAuth(options?: RawAxiosRequestConfig): AxiosPromise<AuthVerify> {
+      return localVarFp
+        .verifyAuth(options)
         .then((request) => request(axios, basePath));
     },
   };
@@ -348,6 +635,20 @@ export interface AuthApiExternalInitializeRequest {
 }
 
 /**
+ * Request parameters for loginAuth operation in AuthApi.
+ * @export
+ * @interface AuthApiLoginAuthRequest
+ */
+export interface AuthApiLoginAuthRequest {
+  /**
+   * The credentials to authenticate
+   * @type {AuthLogin}
+   * @memberof AuthApiLoginAuth
+   */
+  readonly authLogin: AuthLogin;
+}
+
+/**
  * AuthApi - object-oriented interface
  * @export
  * @class AuthApi
@@ -394,6 +695,49 @@ export class AuthApi extends BaseAPI {
         requestParameters.state,
         options,
       )
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @summary Authenticate an user by credentials
+   * @param {AuthApiLoginAuthRequest} requestParameters Request parameters.
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof AuthApi
+   */
+  public loginAuth(
+    requestParameters: AuthApiLoginAuthRequest,
+    options?: RawAxiosRequestConfig,
+  ) {
+    return AuthApiFp(this.configuration)
+      .loginAuth(requestParameters.authLogin, options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @summary Refresh an auth token before it expires
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof AuthApi
+   */
+  public refreshAuth(options?: RawAxiosRequestConfig) {
+    return AuthApiFp(this.configuration)
+      .refreshAuth(options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @summary Verify validity for an authentication token
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof AuthApi
+   */
+  public verifyAuth(options?: RawAxiosRequestConfig) {
+    return AuthApiFp(this.configuration)
+      .verifyAuth(options)
       .then((request) => request(this.axios, this.basePath));
   }
 }

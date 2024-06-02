@@ -12,7 +12,22 @@
  * Do not edit the class manually.
  */
 
-export * from "./api/auth-api";
-export * from "./api/profile-api";
-export * from "./api/team-api";
-export * from "./api/user-api";
+/**
+ *
+ * @export
+ * @interface AuthVerify
+ */
+export interface AuthVerify {
+  /**
+   *
+   * @type {string}
+   * @memberof AuthVerify
+   */
+  username: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AuthVerify
+   */
+  created_at?: string | null;
+}
