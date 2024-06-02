@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.0](https://github.com/gopad/gopad-js/compare/v1.2.0...v1.3.0) (2024-06-02)
+
+
+### Features
+
+* automated openapi client update ([cd44205](https://github.com/gopad/gopad-js/commit/cd4420596825f5f176a28fc8eb95631843f691a0))
+* **deps:** update dependency @types/node to 12.11.5 - 20.13 ([0634695](https://github.com/gopad/gopad-js/commit/0634695ee5b795ec716422400e0625f0afef3ff4))
+* **deps:** update dependency prettier to v3.3.0 ([80f185e](https://github.com/gopad/gopad-js/commit/80f185e6ba47ee4f504de1a927c8245a592f2716))
+
 ## [1.2.0](https://github.com/gopad/gopad-js/compare/v1.1.0...v1.2.0) (2024-05-28)
 
 
