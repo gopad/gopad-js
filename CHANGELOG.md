@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/gopad/gopad-js/compare/v1.3.0...v1.4.0) (2024-06-03)
+
+
+### Features
+
+* **deps:** update dependency @types/node to 12.11.5 - 20.14 ([8e0a25f](https://github.com/gopad/gopad-js/commit/8e0a25fadd96f0063e2b2230cff86daad2389505))
+
 ## [1.3.0](https://github.com/gopad/gopad-js/compare/v1.2.0...v1.3.0) (2024-06-02)
 
 
