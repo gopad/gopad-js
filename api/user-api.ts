@@ -61,7 +61,7 @@ export const UserApiAxiosParamCreator = function (
   return {
     /**
      *
-     * @summary Assign a team to user
+     * @summary Attach a team to user
      * @param {string} userId A user identifier or slug
      * @param {UserTeamParams} userTeamParams The user team data to attach
      * @param {*} [options] Override http request option.
@@ -268,9 +268,9 @@ export const UserApiAxiosParamCreator = function (
     },
     /**
      *
-     * @summary Remove a team from user
+     * @summary Unlink a team from user
      * @param {string} userId A user identifier or slug
-     * @param {UserTeamParams} userTeamParams The user team data to delete
+     * @param {UserTeamParams} userTeamParams The user team data to unlink
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -343,7 +343,7 @@ export const UserApiAxiosParamCreator = function (
     },
     /**
      *
-     * @summary Fetch all teams assigned to user
+     * @summary Fetch all teams attached to user
      * @param {string} userId A user identifier or slug
      * @param {string} [search] Search query
      * @param {ListUserTeamsSortEnum} [sort] Sorting column
@@ -748,7 +748,7 @@ export const UserApiFp = function (configuration?: Configuration) {
   return {
     /**
      *
-     * @summary Assign a team to user
+     * @summary Attach a team to user
      * @param {string} userId A user identifier or slug
      * @param {UserTeamParams} userTeamParams The user team data to attach
      * @param {*} [options] Override http request option.
@@ -840,9 +840,9 @@ export const UserApiFp = function (configuration?: Configuration) {
     },
     /**
      *
-     * @summary Remove a team from user
+     * @summary Unlink a team from user
      * @param {string} userId A user identifier or slug
-     * @param {UserTeamParams} userTeamParams The user team data to delete
+     * @param {UserTeamParams} userTeamParams The user team data to unlink
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -874,7 +874,7 @@ export const UserApiFp = function (configuration?: Configuration) {
     },
     /**
      *
-     * @summary Fetch all teams assigned to user
+     * @summary Fetch all teams attached to user
      * @param {string} userId A user identifier or slug
      * @param {string} [search] Search query
      * @param {ListUserTeamsSortEnum} [sort] Sorting column
@@ -1068,7 +1068,7 @@ export const UserApiFactory = function (
   return {
     /**
      *
-     * @summary Assign a team to user
+     * @summary Attach a team to user
      * @param {UserApiAttachUserToTeamRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1117,7 +1117,7 @@ export const UserApiFactory = function (
     },
     /**
      *
-     * @summary Remove a team from user
+     * @summary Unlink a team from user
      * @param {UserApiDeleteUserFromTeamRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1136,7 +1136,7 @@ export const UserApiFactory = function (
     },
     /**
      *
-     * @summary Fetch all teams assigned to user
+     * @summary Fetch all teams attached to user
      * @param {UserApiListUserTeamsRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1294,7 +1294,7 @@ export interface UserApiDeleteUserFromTeamRequest {
   readonly userId: string;
 
   /**
-   * The user team data to delete
+   * The user team data to unlink
    * @type {UserTeamParams}
    * @memberof UserApiDeleteUserFromTeam
    */
@@ -1457,7 +1457,7 @@ export interface UserApiUpdateUserRequest {
 export class UserApi extends BaseAPI {
   /**
    *
-   * @summary Assign a team to user
+   * @summary Attach a team to user
    * @param {UserApiAttachUserToTeamRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
@@ -1512,7 +1512,7 @@ export class UserApi extends BaseAPI {
 
   /**
    *
-   * @summary Remove a team from user
+   * @summary Unlink a team from user
    * @param {UserApiDeleteUserFromTeamRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
@@ -1533,7 +1533,7 @@ export class UserApi extends BaseAPI {
 
   /**
    *
-   * @summary Fetch all teams assigned to user
+   * @summary Fetch all teams attached to user
    * @param {UserApiListUserTeamsRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
