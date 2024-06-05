@@ -13,7 +13,7 @@
  */
 
 /**
- * Parameters to attach or remove team user
+ * Parameters to attach or unlink team user
  * @export
  * @interface TeamUserParams
  */
