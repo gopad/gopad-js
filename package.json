@@ -1,6 +1,6 @@
 {
   "name": "gopadjs",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "description": "OpenAPI client for Gopad",
   "homepage": "https://github.com/gopad/gopad-js#readme",
   "license": "Apache-2.0",

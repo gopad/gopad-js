@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.0](https://github.com/gopad/gopad-js/compare/v1.6.1...v1.7.0) (2024-08-19)
+
+
+### Features
+
+* **deps:** update dependency @types/node to 12.11.5 - 20.15 ([532a80c](https://github.com/gopad/gopad-js/commit/532a80c7d0c3fa2db71ba1a079949089ccd9fccf))
+* **deps:** update dependency @types/node to 12.11.5 - 20.16 ([4090bec](https://github.com/gopad/gopad-js/commit/4090bec638d208ba22255b8f50958c4f789af113))
+
+
+### Bugfixes
+
+* **deps:** update dependency axios to v1.7.4 [security] ([224bc0b](https://github.com/gopad/gopad-js/commit/224bc0b6f5304c78983bbbed7c65d46f136704ce))
+
 ## [1.6.1](https://github.com/gopad/gopad-js/compare/v1.6.0...v1.6.1) (2024-08-05)
 
 
