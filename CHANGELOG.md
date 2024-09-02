@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.2](https://github.com/gopad/gopad-js/compare/v1.7.1...v1.7.2) (2024-09-02)
+
+
+### Bugfixes
+
+* **deps:** update dependency axios to v1.7.6 ([34a2c81](https://github.com/gopad/gopad-js/commit/34a2c812781325ecbb901cc172a906156bf51e7c))
+* **deps:** update dependency axios to v1.7.7 ([d0e7141](https://github.com/gopad/gopad-js/commit/d0e7141816b603c5140671935d6c9b84427e99f8))
+
 ## [1.7.1](https://github.com/gopad/gopad-js/compare/v1.7.0...v1.7.1) (2024-08-26)
 
 
