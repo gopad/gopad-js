@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.0](https://github.com/gopad/gopad-js/compare/v1.8.0...v2.0.0) (2024-11-04)
+
+
+### Features
+
+* **deps:** update dependency @types/node to v22 ([de1ac2c](https://github.com/gopad/gopad-js/commit/de1ac2c3ab90952b36829d2e0e8684ee2320d5a9))
+
 ## [1.8.0](https://github.com/gopad/gopad-js/compare/v1.7.2...v1.8.0) (2024-10-28)
 
 
