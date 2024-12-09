@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.1](https://github.com/gopad/gopad-js/compare/v2.2.0...v2.2.1) (2024-12-09)
+
+
+### Bugfixes
+
+* **deps:** update dependency axios to v1.7.9 ([#165](https://github.com/gopad/gopad-js/issues/165)) ([656146e](https://github.com/gopad/gopad-js/commit/656146e9294c5408f0bfbc49cb13d6a6c3b86cc3))
+* **deps:** update dependency prettier to v3.4.2 ([#166](https://github.com/gopad/gopad-js/issues/166)) ([52bf7eb](https://github.com/gopad/gopad-js/commit/52bf7eb167d9d85b5db07a3152341c58a54f8d0a))
+
 ## [2.2.0](https://github.com/gopad/gopad-js/compare/v2.1.0...v2.2.0) (2024-12-02)
 
 
