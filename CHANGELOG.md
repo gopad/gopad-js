@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/gopad/gopad-js/compare/v2.4.0...v2.4.1) (2025-02-17)
+
+
+### Bugfixes
+
+* **deps:** update dependency prettier to v3.5.1 ([#170](https://github.com/gopad/gopad-js/issues/170)) ([9758a2c](https://github.com/gopad/gopad-js/commit/9758a2c6acc9c3920f733a41c6a55c609b039e85))
+
 ## [2.4.0](https://github.com/gopad/gopad-js/compare/v2.3.0...v2.4.0) (2025-02-10)
 
 
