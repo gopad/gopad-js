@@ -42,11 +42,13 @@ import {
   operationServerMap,
 } from "../base";
 // @ts-ignore
-import type { AuthLogin } from "../model";
-// @ts-ignore
 import type { AuthToken } from "../model";
 // @ts-ignore
 import type { AuthVerify } from "../model";
+// @ts-ignore
+import type { ListProviders200Response } from "../model";
+// @ts-ignore
+import type { LoginAuthRequest } from "../model";
 // @ts-ignore
 import type { Notification } from "../model";
 /**
@@ -59,21 +61,21 @@ export const AuthApiAxiosParamCreator = function (
   return {
     /**
      *
-     * @summary Callback for external authentication
+     * @summary Callback to parse the defined provider
      * @param {string} provider An identifier for the auth provider
      * @param {string} [state] Auth state
      * @param {string} [code] Auth code
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    externalCallback: async (
+    callbackProvider: async (
       provider: string,
       state?: string,
       code?: string,
       options: RawAxiosRequestConfig = {},
     ): Promise<RequestArgs> => {
       // verify required parameter 'provider' is not null or undefined
-      assertParamExists("externalCallback", "provider", provider);
+      assertParamExists("callbackProvider", "provider", provider);
       const localVarPath = `/auth/{provider}/callback`.replace(
         `{${"provider"}}`,
         encodeURIComponent(String(provider)),
@@ -117,23 +119,14 @@ export const AuthApiAxiosParamCreator = function (
     },
     /**
      *
-     * @summary Initialize the external authentication
-     * @param {string} provider An identifier for the auth provider
-     * @param {string} [state] Auth state
+     * @summary Fetch the available auth providers
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    externalInitialize: async (
-      provider: string,
-      state?: string,
+    listProviders: async (
       options: RawAxiosRequestConfig = {},
     ): Promise<RequestArgs> => {
-      // verify required parameter 'provider' is not null or undefined
-      assertParamExists("externalInitialize", "provider", provider);
-      const localVarPath = `/auth/{provider}/initialize`.replace(
-        `{${"provider"}}`,
-        encodeURIComponent(String(provider)),
-      );
+      const localVarPath = `/auth/providers`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
       let baseOptions;
@@ -148,10 +141,6 @@ export const AuthApiAxiosParamCreator = function (
       };
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
-
-      if (state !== undefined) {
-        localVarQueryParameter["state"] = state;
-      }
 
       setSearchParams(localVarUrlObj, localVarQueryParameter);
       let headersFromBaseOptions =
@@ -170,16 +159,16 @@ export const AuthApiAxiosParamCreator = function (
     /**
      *
      * @summary Authenticate an user by credentials
-     * @param {AuthLogin} authLogin The credentials to authenticate
+     * @param {LoginAuthRequest} loginAuthRequest The credentials to authenticate
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     loginAuth: async (
-      authLogin: AuthLogin,
+      loginAuthRequest: LoginAuthRequest,
       options: RawAxiosRequestConfig = {},
     ): Promise<RequestArgs> => {
-      // verify required parameter 'authLogin' is not null or undefined
-      assertParamExists("loginAuth", "authLogin", authLogin);
+      // verify required parameter 'loginAuthRequest' is not null or undefined
+      assertParamExists("loginAuth", "loginAuthRequest", loginAuthRequest);
       const localVarPath = `/auth/login`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -207,7 +196,7 @@ export const AuthApiAxiosParamCreator = function (
         ...options.headers,
       };
       localVarRequestOptions.data = serializeDataIfNeeded(
-        authLogin,
+        loginAuthRequest,
         localVarRequestOptions,
         configuration,
       );
@@ -242,9 +231,6 @@ export const AuthApiAxiosParamCreator = function (
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
 
-      // authentication Cookie required
-      await setApiKeyToObject(localVarHeaderParameter, "Cookie", configuration);
-
       // authentication Basic required
       // http basic authentication required
       setBasicAuthToObject(localVarRequestOptions, configuration);
@@ -259,6 +245,52 @@ export const AuthApiAxiosParamCreator = function (
       // authentication Bearer required
       // http bearer authentication required
       await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @summary Request the redirect to defined provider
+     * @param {string} provider An identifier for the auth provider
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    requestProvider: async (
+      provider: string,
+      options: RawAxiosRequestConfig = {},
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'provider' is not null or undefined
+      assertParamExists("requestProvider", "provider", provider);
+      const localVarPath = `/auth/{provider}/request`.replace(
+        `{${"provider"}}`,
+        encodeURIComponent(String(provider)),
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: "GET",
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
 
       setSearchParams(localVarUrlObj, localVarQueryParameter);
       let headersFromBaseOptions =
@@ -298,9 +330,6 @@ export const AuthApiAxiosParamCreator = function (
       };
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
-
-      // authentication Cookie required
-      await setApiKeyToObject(localVarHeaderParameter, "Cookie", configuration);
 
       // authentication Basic required
       // http basic authentication required
@@ -343,23 +372,23 @@ export const AuthApiFp = function (configuration?: Configuration) {
   return {
     /**
      *
-     * @summary Callback for external authentication
+     * @summary Callback to parse the defined provider
      * @param {string} provider An identifier for the auth provider
      * @param {string} [state] Auth state
      * @param {string} [code] Auth code
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    async externalCallback(
+    async callbackProvider(
       provider: string,
       state?: string,
       code?: string,
       options?: RawAxiosRequestConfig,
     ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Notification>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.externalCallback(
+        await localVarAxiosParamCreator.callbackProvider(
           provider,
           state,
           code,
@@ -367,7 +396,7 @@ export const AuthApiFp = function (configuration?: Configuration) {
         );
       const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
       const localVarOperationServerBasePath =
-        operationServerMap["AuthApi.externalCallback"]?.[
+        operationServerMap["AuthApi.callbackProvider"]?.[
           localVarOperationServerIndex
         ]?.url;
       return (axios, basePath) =>
@@ -380,28 +409,23 @@ export const AuthApiFp = function (configuration?: Configuration) {
     },
     /**
      *
-     * @summary Initialize the external authentication
-     * @param {string} provider An identifier for the auth provider
-     * @param {string} [state] Auth state
+     * @summary Fetch the available auth providers
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    async externalInitialize(
-      provider: string,
-      state?: string,
+    async listProviders(
       options?: RawAxiosRequestConfig,
     ): Promise<
-      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Notification>
+      (
+        axios?: AxiosInstance,
+        basePath?: string,
+      ) => AxiosPromise<ListProviders200Response>
     > {
       const localVarAxiosArgs =
-        await localVarAxiosParamCreator.externalInitialize(
-          provider,
-          state,
-          options,
-        );
+        await localVarAxiosParamCreator.listProviders(options);
       const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
       const localVarOperationServerBasePath =
-        operationServerMap["AuthApi.externalInitialize"]?.[
+        operationServerMap["AuthApi.listProviders"]?.[
           localVarOperationServerIndex
         ]?.url;
       return (axios, basePath) =>
@@ -415,18 +439,18 @@ export const AuthApiFp = function (configuration?: Configuration) {
     /**
      *
      * @summary Authenticate an user by credentials
-     * @param {AuthLogin} authLogin The credentials to authenticate
+     * @param {LoginAuthRequest} loginAuthRequest The credentials to authenticate
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     async loginAuth(
-      authLogin: AuthLogin,
+      loginAuthRequest: LoginAuthRequest,
       options?: RawAxiosRequestConfig,
     ): Promise<
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthToken>
     > {
       const localVarAxiosArgs = await localVarAxiosParamCreator.loginAuth(
-        authLogin,
+        loginAuthRequest,
         options,
       );
       const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
@@ -457,6 +481,36 @@ export const AuthApiFp = function (configuration?: Configuration) {
       const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
       const localVarOperationServerBasePath =
         operationServerMap["AuthApi.refreshAuth"]?.[
+          localVarOperationServerIndex
+        ]?.url;
+      return (axios, basePath) =>
+        createRequestFunction(
+          localVarAxiosArgs,
+          globalAxios,
+          BASE_PATH,
+          configuration,
+        )(axios, localVarOperationServerBasePath || basePath);
+    },
+    /**
+     *
+     * @summary Request the redirect to defined provider
+     * @param {string} provider An identifier for the auth provider
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async requestProvider(
+      provider: string,
+      options?: RawAxiosRequestConfig,
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs = await localVarAxiosParamCreator.requestProvider(
+        provider,
+        options,
+      );
+      const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+      const localVarOperationServerBasePath =
+        operationServerMap["AuthApi.requestProvider"]?.[
           localVarOperationServerIndex
         ]?.url;
       return (axios, basePath) =>
@@ -508,17 +562,17 @@ export const AuthApiFactory = function (
   return {
     /**
      *
-     * @summary Callback for external authentication
-     * @param {AuthApiExternalCallbackRequest} requestParameters Request parameters.
+     * @summary Callback to parse the defined provider
+     * @param {AuthApiCallbackProviderRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    externalCallback(
-      requestParameters: AuthApiExternalCallbackRequest,
+    callbackProvider(
+      requestParameters: AuthApiCallbackProviderRequest,
       options?: RawAxiosRequestConfig,
-    ): AxiosPromise<Notification> {
+    ): AxiosPromise<void> {
       return localVarFp
-        .externalCallback(
+        .callbackProvider(
           requestParameters.provider,
           requestParameters.state,
           requestParameters.code,
@@ -528,21 +582,15 @@ export const AuthApiFactory = function (
     },
     /**
      *
-     * @summary Initialize the external authentication
-     * @param {AuthApiExternalInitializeRequest} requestParameters Request parameters.
+     * @summary Fetch the available auth providers
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    externalInitialize(
-      requestParameters: AuthApiExternalInitializeRequest,
+    listProviders(
       options?: RawAxiosRequestConfig,
-    ): AxiosPromise<Notification> {
+    ): AxiosPromise<ListProviders200Response> {
       return localVarFp
-        .externalInitialize(
-          requestParameters.provider,
-          requestParameters.state,
-          options,
-        )
+        .listProviders(options)
         .then((request) => request(axios, basePath));
     },
     /**
@@ -557,7 +605,7 @@ export const AuthApiFactory = function (
       options?: RawAxiosRequestConfig,
     ): AxiosPromise<AuthToken> {
       return localVarFp
-        .loginAuth(requestParameters.authLogin, options)
+        .loginAuth(requestParameters.loginAuthRequest, options)
         .then((request) => request(axios, basePath));
     },
     /**
@@ -569,6 +617,21 @@ export const AuthApiFactory = function (
     refreshAuth(options?: RawAxiosRequestConfig): AxiosPromise<AuthToken> {
       return localVarFp
         .refreshAuth(options)
+        .then((request) => request(axios, basePath));
+    },
+    /**
+     *
+     * @summary Request the redirect to defined provider
+     * @param {AuthApiRequestProviderRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    requestProvider(
+      requestParameters: AuthApiRequestProviderRequest,
+      options?: RawAxiosRequestConfig,
+    ): AxiosPromise<void> {
+      return localVarFp
+        .requestProvider(requestParameters.provider, options)
         .then((request) => request(axios, basePath));
     },
     /**
@@ -586,52 +649,31 @@ export const AuthApiFactory = function (
 };
 
 /**
- * Request parameters for externalCallback operation in AuthApi.
+ * Request parameters for callbackProvider operation in AuthApi.
  * @export
- * @interface AuthApiExternalCallbackRequest
+ * @interface AuthApiCallbackProviderRequest
  */
-export interface AuthApiExternalCallbackRequest {
+export interface AuthApiCallbackProviderRequest {
   /**
    * An identifier for the auth provider
    * @type {string}
-   * @memberof AuthApiExternalCallback
+   * @memberof AuthApiCallbackProvider
    */
   readonly provider: string;
 
   /**
    * Auth state
    * @type {string}
-   * @memberof AuthApiExternalCallback
+   * @memberof AuthApiCallbackProvider
    */
   readonly state?: string;
 
   /**
    * Auth code
    * @type {string}
-   * @memberof AuthApiExternalCallback
+   * @memberof AuthApiCallbackProvider
    */
   readonly code?: string;
-}
-
-/**
- * Request parameters for externalInitialize operation in AuthApi.
- * @export
- * @interface AuthApiExternalInitializeRequest
- */
-export interface AuthApiExternalInitializeRequest {
-  /**
-   * An identifier for the auth provider
-   * @type {string}
-   * @memberof AuthApiExternalInitialize
-   */
-  readonly provider: string;
-
-  /**
-   * Auth state
-   * @type {string}
-   * @memberof AuthApiExternalInitialize
-   */
-  readonly state?: string;
 }
 
 /**
@@ -642,10 +684,24 @@ export interface AuthApiExternalInitializeRequest {
 export interface AuthApiLoginAuthRequest {
   /**
    * The credentials to authenticate
-   * @type {AuthLogin}
+   * @type {LoginAuthRequest}
    * @memberof AuthApiLoginAuth
    */
-  readonly authLogin: AuthLogin;
+  readonly loginAuthRequest: LoginAuthRequest;
+}
+
+/**
+ * Request parameters for requestProvider operation in AuthApi.
+ * @export
+ * @interface AuthApiRequestProviderRequest
+ */
+export interface AuthApiRequestProviderRequest {
+  /**
+   * An identifier for the auth provider
+   * @type {string}
+   * @memberof AuthApiRequestProvider
+   */
+  readonly provider: string;
 }
 
 /**
@@ -657,18 +713,18 @@ export interface AuthApiLoginAuthRequest {
 export class AuthApi extends BaseAPI {
   /**
    *
-   * @summary Callback for external authentication
-   * @param {AuthApiExternalCallbackRequest} requestParameters Request parameters.
+   * @summary Callback to parse the defined provider
+   * @param {AuthApiCallbackProviderRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
    * @memberof AuthApi
    */
-  public externalCallback(
-    requestParameters: AuthApiExternalCallbackRequest,
+  public callbackProvider(
+    requestParameters: AuthApiCallbackProviderRequest,
     options?: RawAxiosRequestConfig,
   ) {
     return AuthApiFp(this.configuration)
-      .externalCallback(
+      .callbackProvider(
         requestParameters.provider,
         requestParameters.state,
         requestParameters.code,
@@ -679,22 +735,14 @@ export class AuthApi extends BaseAPI {
 
   /**
    *
-   * @summary Initialize the external authentication
-   * @param {AuthApiExternalInitializeRequest} requestParameters Request parameters.
+   * @summary Fetch the available auth providers
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
    * @memberof AuthApi
    */
-  public externalInitialize(
-    requestParameters: AuthApiExternalInitializeRequest,
-    options?: RawAxiosRequestConfig,
-  ) {
+  public listProviders(options?: RawAxiosRequestConfig) {
     return AuthApiFp(this.configuration)
-      .externalInitialize(
-        requestParameters.provider,
-        requestParameters.state,
-        options,
-      )
+      .listProviders(options)
       .then((request) => request(this.axios, this.basePath));
   }
 
@@ -711,7 +759,7 @@ export class AuthApi extends BaseAPI {
     options?: RawAxiosRequestConfig,
   ) {
     return AuthApiFp(this.configuration)
-      .loginAuth(requestParameters.authLogin, options)
+      .loginAuth(requestParameters.loginAuthRequest, options)
       .then((request) => request(this.axios, this.basePath));
   }
 
@@ -725,6 +773,23 @@ export class AuthApi extends BaseAPI {
   public refreshAuth(options?: RawAxiosRequestConfig) {
     return AuthApiFp(this.configuration)
       .refreshAuth(options)
+      .then((request) => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @summary Request the redirect to defined provider
+   * @param {AuthApiRequestProviderRequest} requestParameters Request parameters.
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof AuthApi
+   */
+  public requestProvider(
+    requestParameters: AuthApiRequestProviderRequest,
+    options?: RawAxiosRequestConfig,
+  ) {
+    return AuthApiFp(this.configuration)
+      .requestProvider(requestParameters.provider, options)
       .then((request) => request(this.axios, this.basePath));
   }
 

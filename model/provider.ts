@@ -13,30 +13,33 @@
  */
 
 /**
- * Parameters to attach or unlink team user
+ * Model to represent auth provider
  * @export
- * @interface TeamUserParams
+ * @interface Provider
  */
-export interface TeamUserParams {
+export interface Provider {
   /**
    *
    * @type {string}
-   * @memberof TeamUserParams
+   * @memberof Provider
    */
-  user: string;
+  name?: string;
   /**
    *
    * @type {string}
-   * @memberof TeamUserParams
+   * @memberof Provider
    */
-  perm?: TeamUserParamsPermEnum;
+  driver?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Provider
+   */
+  display?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Provider
+   */
+  icon?: string;
 }
-
-export const TeamUserParamsPermEnum = {
-  User: "user",
-  Admin: "admin",
-  Owner: "owner",
-} as const;
-
-export type TeamUserParamsPermEnum =
-  (typeof TeamUserParamsPermEnum)[keyof typeof TeamUserParamsPermEnum];

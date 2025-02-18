@@ -12,26 +12,16 @@
  * Do not edit the class manually.
  */
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { User } from "./user";
-
 /**
- * Model to represent list of users
+ *
  * @export
- * @interface Users
+ * @interface DeleteUserFromGroupRequest
  */
-export interface Users {
+export interface DeleteUserFromGroupRequest {
   /**
    *
-   * @type {number}
-   * @memberof Users
+   * @type {string}
+   * @memberof DeleteUserFromGroupRequest
    */
-  total?: number;
-  /**
-   *
-   * @type {Array<User>}
-   * @memberof Users
-   */
-  users?: Array<User>;
+  group: string;
 }

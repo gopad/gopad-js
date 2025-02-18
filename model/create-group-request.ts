@@ -15,19 +15,19 @@
 /**
  *
  * @export
- * @interface AuthLogin
+ * @interface CreateGroupRequest
  */
-export interface AuthLogin {
+export interface CreateGroupRequest {
   /**
    *
    * @type {string}
-   * @memberof AuthLogin
+   * @memberof CreateGroupRequest
    */
-  username: string;
+  slug?: string | null;
   /**
    *
    * @type {string}
-   * @memberof AuthLogin
+   * @memberof CreateGroupRequest
    */
-  password: string;
+  name?: string | null;
 }

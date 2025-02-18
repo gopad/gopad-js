@@ -17,30 +17,42 @@
 import type { User } from "./user";
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UserTeam } from "./user-team";
+import type { UserGroup } from "./user-group";
 
 /**
- * Model to represent user teams
+ *
  * @export
- * @interface UserTeams
+ * @interface ListUserGroups200Response
  */
-export interface UserTeams {
+export interface ListUserGroups200Response {
+  /**
+   *
+   * @type {number}
+   * @memberof ListUserGroups200Response
+   */
+  total: number;
+  /**
+   *
+   * @type {number}
+   * @memberof ListUserGroups200Response
+   */
+  limit: number;
+  /**
+   *
+   * @type {number}
+   * @memberof ListUserGroups200Response
+   */
+  offset: number;
   /**
    *
    * @type {User}
-   * @memberof UserTeams
+   * @memberof ListUserGroups200Response
    */
   user?: User;
   /**
    *
-   * @type {number}
-   * @memberof UserTeams
+   * @type {Array<UserGroup>}
+   * @memberof ListUserGroups200Response
    */
-  total?: number;
-  /**
-   *
-   * @type {Array<UserTeam>}
-   * @memberof UserTeams
-   */
-  teams?: Array<UserTeam>;
+  groups: Array<UserGroup>;
 }

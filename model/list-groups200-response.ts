@@ -14,24 +14,36 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Team } from "./team";
+import type { Group } from "./group";
 
 /**
- * Model to represent list of teams
+ *
  * @export
- * @interface Teams
+ * @interface ListGroups200Response
  */
-export interface Teams {
+export interface ListGroups200Response {
   /**
    *
    * @type {number}
-   * @memberof Teams
+   * @memberof ListGroups200Response
    */
-  total?: number;
+  total: number;
   /**
    *
-   * @type {Array<Team>}
-   * @memberof Teams
+   * @type {number}
+   * @memberof ListGroups200Response
    */
-  teams?: Array<Team>;
+  limit: number;
+  /**
+   *
+   * @type {number}
+   * @memberof ListGroups200Response
+   */
+  offset: number;
+  /**
+   *
+   * @type {Array<Group>}
+   * @memberof ListGroups200Response
+   */
+  groups: Array<Group>;
 }

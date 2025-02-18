@@ -13,30 +13,33 @@
  */
 
 /**
- * Parameters to attach or unlink user team
+ *
  * @export
- * @interface UserTeamParams
+ * @interface UpdateProfileRequest
  */
-export interface UserTeamParams {
+export interface UpdateProfileRequest {
   /**
    *
    * @type {string}
-   * @memberof UserTeamParams
+   * @memberof UpdateProfileRequest
    */
-  team: string;
+  username?: string | null;
   /**
    *
    * @type {string}
-   * @memberof UserTeamParams
+   * @memberof UpdateProfileRequest
    */
-  perm?: UserTeamParamsPermEnum;
+  password?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof UpdateProfileRequest
+   */
+  email?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof UpdateProfileRequest
+   */
+  fullname?: string | null;
 }
-
-export const UserTeamParamsPermEnum = {
-  User: "user",
-  Admin: "admin",
-  Owner: "owner",
-} as const;
-
-export type UserTeamParamsPermEnum =
-  (typeof UserTeamParamsPermEnum)[keyof typeof UserTeamParamsPermEnum];

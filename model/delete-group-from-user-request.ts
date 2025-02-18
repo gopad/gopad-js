@@ -12,7 +12,16 @@
  * Do not edit the class manually.
  */
 
-export * from "./api/auth-api";
-export * from "./api/group-api";
-export * from "./api/profile-api";
-export * from "./api/user-api";
+/**
+ *
+ * @export
+ * @interface DeleteGroupFromUserRequest
+ */
+export interface DeleteGroupFromUserRequest {
+  /**
+   *
+   * @type {string}
+   * @memberof DeleteGroupFromUserRequest
+   */
+  user: string;
+}

@@ -47,6 +47,8 @@ import type { AuthToken } from "../model";
 import type { Notification } from "../model";
 // @ts-ignore
 import type { Profile } from "../model";
+// @ts-ignore
+import type { UpdateProfileRequest } from "../model";
 /**
  * ProfileApi - axios parameter creator
  * @export
@@ -79,9 +81,6 @@ export const ProfileApiAxiosParamCreator = function (
       };
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
-
-      // authentication Cookie required
-      await setApiKeyToObject(localVarHeaderParameter, "Cookie", configuration);
 
       // authentication Basic required
       // http basic authentication required
@@ -137,9 +136,6 @@ export const ProfileApiAxiosParamCreator = function (
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
 
-      // authentication Cookie required
-      await setApiKeyToObject(localVarHeaderParameter, "Cookie", configuration);
-
       // authentication Basic required
       // http basic authentication required
       setBasicAuthToObject(localVarRequestOptions, configuration);
@@ -172,16 +168,20 @@ export const ProfileApiAxiosParamCreator = function (
     /**
      *
      * @summary Update your own profile information
-     * @param {Profile} profile The profile data to update
+     * @param {UpdateProfileRequest} updateProfileRequest The profile data to update
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     updateProfile: async (
-      profile: Profile,
+      updateProfileRequest: UpdateProfileRequest,
       options: RawAxiosRequestConfig = {},
     ): Promise<RequestArgs> => {
-      // verify required parameter 'profile' is not null or undefined
-      assertParamExists("updateProfile", "profile", profile);
+      // verify required parameter 'updateProfileRequest' is not null or undefined
+      assertParamExists(
+        "updateProfile",
+        "updateProfileRequest",
+        updateProfileRequest,
+      );
       const localVarPath = `/profile/self`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -198,6 +198,21 @@ export const ProfileApiAxiosParamCreator = function (
       const localVarHeaderParameter = {} as any;
       const localVarQueryParameter = {} as any;
 
+      // authentication Basic required
+      // http basic authentication required
+      setBasicAuthToObject(localVarRequestOptions, configuration);
+
+      // authentication Header required
+      await setApiKeyToObject(
+        localVarHeaderParameter,
+        "X-API-Key",
+        configuration,
+      );
+
+      // authentication Bearer required
+      // http bearer authentication required
+      await setBearerAuthToObject(localVarHeaderParameter, configuration);
+
       localVarHeaderParameter["Content-Type"] = "application/json";
 
       setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -209,7 +224,7 @@ export const ProfileApiAxiosParamCreator = function (
         ...options.headers,
       };
       localVarRequestOptions.data = serializeDataIfNeeded(
-        profile,
+        updateProfileRequest,
         localVarRequestOptions,
         configuration,
       );
@@ -284,18 +299,18 @@ export const ProfileApiFp = function (configuration?: Configuration) {
     /**
      *
      * @summary Update your own profile information
-     * @param {Profile} profile The profile data to update
+     * @param {UpdateProfileRequest} updateProfileRequest The profile data to update
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     async updateProfile(
-      profile: Profile,
+      updateProfileRequest: UpdateProfileRequest,
       options?: RawAxiosRequestConfig,
     ): Promise<
       (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Profile>
     > {
       const localVarAxiosArgs = await localVarAxiosParamCreator.updateProfile(
-        profile,
+        updateProfileRequest,
         options,
       );
       const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
@@ -359,7 +374,7 @@ export const ProfileApiFactory = function (
       options?: RawAxiosRequestConfig,
     ): AxiosPromise<Profile> {
       return localVarFp
-        .updateProfile(requestParameters.profile, options)
+        .updateProfile(requestParameters.updateProfileRequest, options)
         .then((request) => request(axios, basePath));
     },
   };
@@ -373,10 +388,10 @@ export const ProfileApiFactory = function (
 export interface ProfileApiUpdateProfileRequest {
   /**
    * The profile data to update
-   * @type {Profile}
+   * @type {UpdateProfileRequest}
    * @memberof ProfileApiUpdateProfile
    */
-  readonly profile: Profile;
+  readonly updateProfileRequest: UpdateProfileRequest;
 }
 
 /**
@@ -425,7 +440,7 @@ export class ProfileApi extends BaseAPI {
     options?: RawAxiosRequestConfig,
   ) {
     return ProfileApiFp(this.configuration)
-      .updateProfile(requestParameters.profile, options)
+      .updateProfile(requestParameters.updateProfileRequest, options)
       .then((request) => request(this.axios, this.basePath));
   }
 }
