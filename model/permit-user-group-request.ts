@@ -12,7 +12,22 @@
  * Do not edit the class manually.
  */
 
-export * from "./api/auth-api";
-export * from "./api/group-api";
-export * from "./api/profile-api";
-export * from "./api/user-api";
+/**
+ *
+ * @export
+ * @interface PermitUserGroupRequest
+ */
+export interface PermitUserGroupRequest {
+  /**
+   *
+   * @type {string}
+   * @memberof PermitUserGroupRequest
+   */
+  group: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PermitUserGroupRequest
+   */
+  perm: string;
+}

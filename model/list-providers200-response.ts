@@ -14,33 +14,24 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Team } from "./team";
-// May contain unused imports in some cases
-// @ts-ignore
-import type { UserTeam } from "./user-team";
+import type { Provider } from "./provider";
 
 /**
- * Model to represent team users
+ *
  * @export
- * @interface TeamUsers
+ * @interface ListProviders200Response
  */
-export interface TeamUsers {
-  /**
-   *
-   * @type {Team}
-   * @memberof TeamUsers
-   */
-  team?: Team;
+export interface ListProviders200Response {
   /**
    *
    * @type {number}
-   * @memberof TeamUsers
+   * @memberof ListProviders200Response
    */
-  total?: number;
+  total: number;
   /**
    *
-   * @type {Array<UserTeam>}
-   * @memberof TeamUsers
+   * @type {Array<Provider>}
+   * @memberof ListProviders200Response
    */
-  users?: Array<UserTeam>;
+  providers: Array<Provider>;
 }

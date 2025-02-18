@@ -14,66 +14,66 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Team } from "./team";
+import type { Group } from "./group";
 // May contain unused imports in some cases
 // @ts-ignore
 import type { User } from "./user";
 
 /**
- * Model to represent user team
+ * Model to represent user group
  * @export
- * @interface UserTeam
+ * @interface UserGroup
  */
-export interface UserTeam {
+export interface UserGroup {
   /**
    *
    * @type {string}
-   * @memberof UserTeam
+   * @memberof UserGroup
    */
   user_id: string;
   /**
    *
    * @type {User}
-   * @memberof UserTeam
+   * @memberof UserGroup
    */
   user?: User;
   /**
    *
    * @type {string}
-   * @memberof UserTeam
+   * @memberof UserGroup
    */
-  team_id: string;
+  group_id: string;
   /**
    *
-   * @type {Team}
-   * @memberof UserTeam
+   * @type {Group}
+   * @memberof UserGroup
    */
-  team?: Team;
-  /**
-   *
-   * @type {string}
-   * @memberof UserTeam
-   */
-  perm?: UserTeamPermEnum;
+  group?: Group;
   /**
    *
    * @type {string}
-   * @memberof UserTeam
+   * @memberof UserGroup
+   */
+  perm?: UserGroupPermEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof UserGroup
    */
   created_at?: string;
   /**
    *
    * @type {string}
-   * @memberof UserTeam
+   * @memberof UserGroup
    */
   updated_at?: string;
 }
 
-export const UserTeamPermEnum = {
+export const UserGroupPermEnum = {
+  Owner: "owner",
   User: "user",
   Admin: "admin",
-  Owner: "owner",
 } as const;
 
-export type UserTeamPermEnum =
-  (typeof UserTeamPermEnum)[keyof typeof UserTeamPermEnum];
+export type UserGroupPermEnum =
+  (typeof UserGroupPermEnum)[keyof typeof UserGroupPermEnum];

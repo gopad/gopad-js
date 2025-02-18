@@ -12,50 +12,46 @@
  * Do not edit the class manually.
  */
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { UserTeam } from "./user-team";
-
 /**
- * Model to represent team
+ *
  * @export
- * @interface Team
+ * @interface CreateUserRequest
  */
-export interface Team {
+export interface CreateUserRequest {
   /**
    *
    * @type {string}
-   * @memberof Team
+   * @memberof CreateUserRequest
    */
-  id?: string;
+  username?: string | null;
   /**
    *
    * @type {string}
-   * @memberof Team
+   * @memberof CreateUserRequest
    */
-  slug?: string | null;
+  password?: string | null;
   /**
    *
    * @type {string}
-   * @memberof Team
+   * @memberof CreateUserRequest
    */
-  name?: string | null;
+  email?: string | null;
   /**
    *
    * @type {string}
-   * @memberof Team
+   * @memberof CreateUserRequest
    */
-  created_at?: string;
+  fullname?: string | null;
   /**
    *
-   * @type {string}
-   * @memberof Team
+   * @type {boolean}
+   * @memberof CreateUserRequest
    */
-  updated_at?: string;
+  admin?: boolean | null;
   /**
    *
-   * @type {Array<UserTeam>}
-   * @memberof Team
+   * @type {boolean}
+   * @memberof CreateUserRequest
    */
-  users?: Array<UserTeam> | null;
+  active?: boolean | null;
 }

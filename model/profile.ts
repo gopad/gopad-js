@@ -17,7 +17,7 @@
 import type { UserAuth } from "./user-auth";
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UserTeam } from "./user-team";
+import type { UserGroup } from "./user-group";
 
 /**
  * Model to represent profile
@@ -93,8 +93,8 @@ export interface Profile {
   auths?: Array<UserAuth> | null;
   /**
    *
-   * @type {Array<UserTeam>}
+   * @type {Array<UserGroup>}
    * @memberof Profile
    */
-  teams?: Array<UserTeam> | null;
+  groups?: Array<UserGroup> | null;
 }
