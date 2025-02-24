@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.5.0](https://github.com/gopad/gopad-js/compare/v2.4.1...v2.5.0) (2025-02-24)
+
+
+### Features
+
+* automated openapi client update ([5827687](https://github.com/gopad/gopad-js/commit/5827687912b62aa5fa5a6eb0a38c062c05f77e18))
+* automated openapi client update ([5dfa623](https://github.com/gopad/gopad-js/commit/5dfa623c10e47f190959950455cbc4d46e840be0))
+* entirely regenerate client locally ([9f7bb87](https://github.com/gopad/gopad-js/commit/9f7bb87b7187331d9a102ca059b626ad26837f83))
+
+
+### Bugfixes
+
+* **deps:** update dependency prettier to v3.5.2 ([#173](https://github.com/gopad/gopad-js/issues/173)) ([74893f7](https://github.com/gopad/gopad-js/commit/74893f7be8c579fe0046ac44b2df57412d778a98))
+
 ## [2.4.1](https://github.com/gopad/gopad-js/compare/v2.4.0...v2.4.1) (2025-02-17)
 
 
