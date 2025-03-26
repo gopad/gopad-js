@@ -14,11 +14,11 @@ if ! hash openapi-generator-cli 2>/dev/null; then
 fi
 
 SPEC_VERSION="1.0.0-alpha1"
-SPEC_DOWNLOAD=${SPEC:-https://dl.gopad.eu/openapi/${SPEC_VERSION}.yml}
+SPEC_DOWNLOAD=${SPEC:-https://dl.gopad.eu/openapi/${SPEC_VERSION}.yaml}
 
 pushd "${ROOT}" >/dev/null
     echo "> deleting apis and models"
-    rm -rf api model
+    rm -rf api model openapitools.json
 
     export TS_POST_PROCESS_FILE="npx prettier -w"
 
