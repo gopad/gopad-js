@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Gopad OpenAPI
- * API definition for Gopad, Etherpad for markdown with go
+ * API definition for Gopad, Etherpad for markdown with Go
  *
  * The version of the OpenAPI document: 1.0.0-alpha1
  * Contact: gopad@webhippie.de
@@ -104,7 +104,13 @@ export class Configuration {
     this.accessToken = param.accessToken;
     this.basePath = param.basePath;
     this.serverIndex = param.serverIndex;
-    this.baseOptions = param.baseOptions;
+    this.baseOptions = {
+      ...param.baseOptions,
+      headers: {
+        "User-Agent": "gopad-js/1.0.0-alpha1",
+        ...param.baseOptions?.headers,
+      },
+    };
     this.formDataCtor = param.formDataCtor;
   }
 

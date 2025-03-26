@@ -15,19 +15,13 @@
 /**
  *
  * @export
- * @interface LoginAuthRequest
+ * @interface RedirectAuthRequest
  */
-export interface LoginAuthRequest {
+export interface RedirectAuthRequest {
   /**
    *
    * @type {string}
-   * @memberof LoginAuthRequest
+   * @memberof RedirectAuthRequest
    */
-  username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof LoginAuthRequest
-   */
-  password: string;
+  token: string;
 }

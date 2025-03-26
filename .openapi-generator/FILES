@@ -28,6 +28,7 @@ model/permit-group-user-request.ts
 model/permit-user-group-request.ts
 model/profile.ts
 model/provider.ts
+model/redirect-auth-request.ts
 model/update-profile-request.ts
 model/update-user-request.ts
 model/user-auth.ts

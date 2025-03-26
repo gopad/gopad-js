@@ -16,6 +16,7 @@ export * from "./permit-group-user-request";
 export * from "./permit-user-group-request";
 export * from "./profile";
 export * from "./provider";
+export * from "./redirect-auth-request";
 export * from "./update-profile-request";
 export * from "./update-user-request";
 export * from "./user";

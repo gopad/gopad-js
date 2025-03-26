@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Gopad OpenAPI
- * API definition for Gopad, Etherpad for markdown with go
+ * API definition for Gopad, Etherpad for markdown with Go
  *
  * The version of the OpenAPI document: 1.0.0-alpha1
  * Contact: gopad@webhippie.de
