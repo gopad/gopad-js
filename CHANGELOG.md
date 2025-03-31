@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.4](https://github.com/gopad/gopad-js/compare/v2.6.3...v2.6.4) (2025-03-31)
+
+
+### Bugfixes
+
+* use correct spec and update definition ([5f997ae](https://github.com/gopad/gopad-js/commit/5f997ae8ee5aefa335cb083d5aed50f2503a2677))
+
 ## [2.6.3](https://github.com/gopad/gopad-js/compare/v2.6.2...v2.6.3) (2025-03-24)
 
 
