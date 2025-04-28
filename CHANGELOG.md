@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.0](https://github.com/gopad/gopad-js/compare/v2.7.0...v2.8.0) (2025-04-28)
+
+
+### Features
+
+* **deps:** update dependency @types/node to 12.11.5 - 22.15 ([#182](https://github.com/gopad/gopad-js/issues/182)) ([cf8ba47](https://github.com/gopad/gopad-js/commit/cf8ba4724a42f2a8f56c5d60a7047744aafc8c05))
+* **deps:** update dependency axios to v1.9.0 ([#183](https://github.com/gopad/gopad-js/issues/183)) ([0957611](https://github.com/gopad/gopad-js/commit/0957611165cb6783d20dddee7df55932a7c1e17f))
+
 ## [2.7.0](https://github.com/gopad/gopad-js/compare/v2.6.4...v2.7.0) (2025-04-07)
 
 
