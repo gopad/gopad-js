@@ -22,37 +22,37 @@ import type { UserGroup } from "./user-group";
 /**
  *
  * @export
- * @interface ListGroupUsers200Response
+ * @interface InlineObject2
  */
-export interface ListGroupUsers200Response {
+export interface InlineObject2 {
   /**
    *
    * @type {number}
-   * @memberof ListGroupUsers200Response
+   * @memberof InlineObject2
    */
   total: number;
   /**
    *
    * @type {number}
-   * @memberof ListGroupUsers200Response
+   * @memberof InlineObject2
    */
   limit: number;
   /**
    *
    * @type {number}
-   * @memberof ListGroupUsers200Response
+   * @memberof InlineObject2
    */
   offset: number;
   /**
    *
    * @type {Group}
-   * @memberof ListGroupUsers200Response
+   * @memberof InlineObject2
    */
   group?: Group;
   /**
    *
    * @type {Array<UserGroup>}
-   * @memberof ListGroupUsers200Response
+   * @memberof InlineObject2
    */
   users: Array<UserGroup>;
 }

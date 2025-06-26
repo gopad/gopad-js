@@ -46,7 +46,7 @@ import type { AuthToken } from "../model";
 // @ts-ignore
 import type { AuthVerify } from "../model";
 // @ts-ignore
-import type { ListProviders200Response } from "../model";
+import type { InlineObject } from "../model";
 // @ts-ignore
 import type { LoginAuthRequest } from "../model";
 // @ts-ignore
@@ -472,10 +472,7 @@ export const AuthApiFp = function (configuration?: Configuration) {
     async listProviders(
       options?: RawAxiosRequestConfig,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string,
-      ) => AxiosPromise<ListProviders200Response>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineObject>
     > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.listProviders(options);
@@ -672,9 +669,7 @@ export const AuthApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listProviders(
-      options?: RawAxiosRequestConfig,
-    ): AxiosPromise<ListProviders200Response> {
+    listProviders(options?: RawAxiosRequestConfig): AxiosPromise<InlineObject> {
       return localVarFp
         .listProviders(options)
         .then((request) => request(axios, basePath));

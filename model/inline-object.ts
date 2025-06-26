@@ -14,36 +14,24 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { User } from "./user";
+import type { Provider } from "./provider";
 
 /**
  *
  * @export
- * @interface ListUsers200Response
+ * @interface InlineObject
  */
-export interface ListUsers200Response {
+export interface InlineObject {
   /**
    *
    * @type {number}
-   * @memberof ListUsers200Response
+   * @memberof InlineObject
    */
   total: number;
   /**
    *
-   * @type {number}
-   * @memberof ListUsers200Response
+   * @type {Array<Provider>}
+   * @memberof InlineObject
    */
-  limit: number;
-  /**
-   *
-   * @type {number}
-   * @memberof ListUsers200Response
-   */
-  offset: number;
-  /**
-   *
-   * @type {Array<User>}
-   * @memberof ListUsers200Response
-   */
-  users: Array<User>;
+  providers: Array<Provider>;
 }
