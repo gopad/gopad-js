@@ -46,9 +46,9 @@ import type { CreateUserRequest } from "../model";
 // @ts-ignore
 import type { DeleteUserFromGroupRequest } from "../model";
 // @ts-ignore
-import type { ListUserGroups200Response } from "../model";
+import type { InlineObject3 } from "../model";
 // @ts-ignore
-import type { ListUsers200Response } from "../model";
+import type { InlineObject4 } from "../model";
 // @ts-ignore
 import type { Notification } from "../model";
 // @ts-ignore
@@ -884,10 +884,7 @@ export const UserApiFp = function (configuration?: Configuration) {
       offset?: number,
       options?: RawAxiosRequestConfig,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string,
-      ) => AxiosPromise<ListUserGroups200Response>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineObject4>
     > {
       const localVarAxiosArgs = await localVarAxiosParamCreator.listUserGroups(
         userId,
@@ -930,10 +927,7 @@ export const UserApiFp = function (configuration?: Configuration) {
       offset?: number,
       options?: RawAxiosRequestConfig,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string,
-      ) => AxiosPromise<ListUsers200Response>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineObject3>
     > {
       const localVarAxiosArgs = await localVarAxiosParamCreator.listUsers(
         search,
@@ -1141,7 +1135,7 @@ export const UserApiFactory = function (
     listUserGroups(
       requestParameters: UserApiListUserGroupsRequest,
       options?: RawAxiosRequestConfig,
-    ): AxiosPromise<ListUserGroups200Response> {
+    ): AxiosPromise<InlineObject4> {
       return localVarFp
         .listUserGroups(
           requestParameters.userId,
@@ -1164,7 +1158,7 @@ export const UserApiFactory = function (
     listUsers(
       requestParameters: UserApiListUsersRequest = {},
       options?: RawAxiosRequestConfig,
-    ): AxiosPromise<ListUsers200Response> {
+    ): AxiosPromise<InlineObject3> {
       return localVarFp
         .listUsers(
           requestParameters.search,

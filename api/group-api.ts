@@ -48,9 +48,9 @@ import type { DeleteGroupFromUserRequest } from "../model";
 // @ts-ignore
 import type { Group } from "../model";
 // @ts-ignore
-import type { ListGroupUsers200Response } from "../model";
+import type { InlineObject1 } from "../model";
 // @ts-ignore
-import type { ListGroups200Response } from "../model";
+import type { InlineObject2 } from "../model";
 // @ts-ignore
 import type { Notification } from "../model";
 // @ts-ignore
@@ -892,10 +892,7 @@ export const GroupApiFp = function (configuration?: Configuration) {
       offset?: number,
       options?: RawAxiosRequestConfig,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string,
-      ) => AxiosPromise<ListGroupUsers200Response>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineObject2>
     > {
       const localVarAxiosArgs = await localVarAxiosParamCreator.listGroupUsers(
         groupId,
@@ -938,10 +935,7 @@ export const GroupApiFp = function (configuration?: Configuration) {
       offset?: number,
       options?: RawAxiosRequestConfig,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string,
-      ) => AxiosPromise<ListGroups200Response>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineObject1>
     > {
       const localVarAxiosArgs = await localVarAxiosParamCreator.listGroups(
         search,
@@ -1151,7 +1145,7 @@ export const GroupApiFactory = function (
     listGroupUsers(
       requestParameters: GroupApiListGroupUsersRequest,
       options?: RawAxiosRequestConfig,
-    ): AxiosPromise<ListGroupUsers200Response> {
+    ): AxiosPromise<InlineObject2> {
       return localVarFp
         .listGroupUsers(
           requestParameters.groupId,
@@ -1174,7 +1168,7 @@ export const GroupApiFactory = function (
     listGroups(
       requestParameters: GroupApiListGroupsRequest = {},
       options?: RawAxiosRequestConfig,
-    ): AxiosPromise<ListGroups200Response> {
+    ): AxiosPromise<InlineObject1> {
       return localVarFp
         .listGroups(
           requestParameters.search,
