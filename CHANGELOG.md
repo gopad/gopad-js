@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.15.0](https://github.com/gopad/gopad-js/compare/v2.14.0...v2.15.0) (2025-08-04)
+
+
+### Features
+
+* **deps:** update dependency @types/node to 12.11.5 - 22.17 ([#193](https://github.com/gopad/gopad-js/issues/193)) ([d51d51f](https://github.com/gopad/gopad-js/commit/d51d51f35d2719f4c80bf89f07069ff9789f472e))
+
 ## [2.14.0](https://github.com/gopad/gopad-js/compare/v2.13.0...v2.14.0) (2025-07-28)
 
 
