@@ -18,26 +18,9 @@ import type { Validation } from "./validation";
 
 /**
  * Generic response for errors and validations
- * @export
- * @interface Notification
  */
 export interface Notification {
-  /**
-   *
-   * @type {number}
-   * @memberof Notification
-   */
   status?: number;
-  /**
-   *
-   * @type {string}
-   * @memberof Notification
-   */
   message?: string;
-  /**
-   *
-   * @type {Array<Validation>}
-   * @memberof Notification
-   */
   errors?: Array<Validation>;
 }
