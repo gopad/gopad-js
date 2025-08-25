@@ -12,6 +12,11 @@
  * Do not edit the class manually.
  */
 
-export interface RedirectAuthRequest {
-  token: string;
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Provider } from "./provider";
+
+export interface ListProviders200Response {
+  total: number;
+  providers: Array<Provider>;
 }

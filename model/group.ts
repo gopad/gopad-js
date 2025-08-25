@@ -14,38 +14,11 @@
 
 /**
  * Model to represent group
- * @export
- * @interface Group
  */
 export interface Group {
-  /**
-   *
-   * @type {string}
-   * @memberof Group
-   */
   id?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Group
-   */
   slug?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof Group
-   */
   name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof Group
-   */
   created_at?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Group
-   */
   updated_at?: string;
 }

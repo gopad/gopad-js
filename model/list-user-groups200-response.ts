@@ -14,24 +14,15 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Provider } from "./provider";
+import type { User } from "./user";
+// May contain unused imports in some cases
+// @ts-ignore
+import type { UserGroup } from "./user-group";
 
-/**
- *
- * @export
- * @interface InlineObject
- */
-export interface InlineObject {
-  /**
-   *
-   * @type {number}
-   * @memberof InlineObject
-   */
+export interface ListUserGroups200Response {
   total: number;
-  /**
-   *
-   * @type {Array<Provider>}
-   * @memberof InlineObject
-   */
-  providers: Array<Provider>;
+  limit: number;
+  offset: number;
+  user?: User;
+  groups: Array<UserGroup>;
 }

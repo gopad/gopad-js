@@ -14,32 +14,10 @@
 
 /**
  * Model to represent auth provider
- * @export
- * @interface Provider
  */
 export interface Provider {
-  /**
-   *
-   * @type {string}
-   * @memberof Provider
-   */
   name?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Provider
-   */
   driver?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Provider
-   */
   display?: string;
-  /**
-   *
-   * @type {string}
-   * @memberof Provider
-   */
   icon?: string;
 }

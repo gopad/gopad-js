@@ -12,22 +12,7 @@
  * Do not edit the class manually.
  */
 
-/**
- *
- * @export
- * @interface AuthVerify
- */
 export interface AuthVerify {
-  /**
-   *
-   * @type {string}
-   * @memberof AuthVerify
-   */
   username: string;
-  /**
-   *
-   * @type {string}
-   * @memberof AuthVerify
-   */
   created_at?: string | null;
 }
