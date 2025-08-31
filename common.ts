@@ -18,11 +18,16 @@ import type { AxiosInstance, AxiosResponse } from "axios";
 import { RequiredError } from "./base";
 import { URL, URLSearchParams } from "url";
 
+/**
+ *
+ * @export
+ */
 export const DUMMY_BASE_URL = "https://example.com";
 
 /**
  *
  * @throws {RequiredError}
+ * @export
  */
 export const assertParamExists = function (
   functionName: string,
@@ -37,6 +42,10 @@ export const assertParamExists = function (
   }
 };
 
+/**
+ *
+ * @export
+ */
 export const setApiKeyToObject = async function (
   object: any,
   keyParamName: string,
@@ -51,6 +60,10 @@ export const setApiKeyToObject = async function (
   }
 };
 
+/**
+ *
+ * @export
+ */
 export const setBasicAuthToObject = function (
   object: any,
   configuration?: Configuration,
@@ -63,6 +76,10 @@ export const setBasicAuthToObject = function (
   }
 };
 
+/**
+ *
+ * @export
+ */
 export const setBearerAuthToObject = async function (
   object: any,
   configuration?: Configuration,
@@ -76,6 +93,10 @@ export const setBearerAuthToObject = async function (
   }
 };
 
+/**
+ *
+ * @export
+ */
 export const setOAuthToObject = async function (
   object: any,
   name: string,
@@ -120,12 +141,20 @@ function setFlattenedQueryParams(
   }
 }
 
+/**
+ *
+ * @export
+ */
 export const setSearchParams = function (url: URL, ...objects: any[]) {
   const searchParams = new URLSearchParams(url.search);
   setFlattenedQueryParams(searchParams, objects);
   url.search = searchParams.toString();
 };
 
+/**
+ *
+ * @export
+ */
 export const serializeDataIfNeeded = function (
   value: any,
   requestOptions: any,
@@ -141,10 +170,18 @@ export const serializeDataIfNeeded = function (
     : value || "";
 };
 
+/**
+ *
+ * @export
+ */
 export const toPathString = function (url: URL) {
   return url.pathname + url.search + url.hash;
 };
 
+/**
+ *
+ * @export
+ */
 export const createRequestFunction = function (
   axiosArgs: RequestArgs,
   globalAxios: AxiosInstance,

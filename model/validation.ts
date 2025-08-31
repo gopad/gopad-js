@@ -14,8 +14,20 @@
 
 /**
  * General structure to show validation errors
+ * @export
+ * @interface Validation
  */
 export interface Validation {
+  /**
+   *
+   * @type {string}
+   * @memberof Validation
+   */
   field?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Validation
+   */
   message?: string;
 }

@@ -12,7 +12,22 @@
  * Do not edit the class manually.
  */
 
+/**
+ *
+ * @export
+ * @interface CreateGroupRequest
+ */
 export interface CreateGroupRequest {
+  /**
+   *
+   * @type {string}
+   * @memberof CreateGroupRequest
+   */
   slug?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateGroupRequest
+   */
   name?: string | null;
 }
