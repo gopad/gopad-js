@@ -51,6 +51,7 @@ import type { Profile } from "../model";
 import type { UpdateProfileRequest } from "../model";
 /**
  * ProfileApi - axios parameter creator
+ * @export
  */
 export const ProfileApiAxiosParamCreator = function (
   configuration?: Configuration,
@@ -238,6 +239,7 @@ export const ProfileApiAxiosParamCreator = function (
 
 /**
  * ProfileApi - functional programming interface
+ * @export
  */
 export const ProfileApiFp = function (configuration?: Configuration) {
   const localVarAxiosParamCreator = ProfileApiAxiosParamCreator(configuration);
@@ -329,6 +331,7 @@ export const ProfileApiFp = function (configuration?: Configuration) {
 
 /**
  * ProfileApi - factory interface
+ * @export
  */
 export const ProfileApiFactory = function (
   configuration?: Configuration,
@@ -379,16 +382,23 @@ export const ProfileApiFactory = function (
 
 /**
  * Request parameters for updateProfile operation in ProfileApi.
+ * @export
+ * @interface ProfileApiUpdateProfileRequest
  */
 export interface ProfileApiUpdateProfileRequest {
   /**
    * The profile data to update
+   * @type {UpdateProfileRequest}
+   * @memberof ProfileApiUpdateProfile
    */
   readonly updateProfileRequest: UpdateProfileRequest;
 }
 
 /**
  * ProfileApi - object-oriented interface
+ * @export
+ * @class ProfileApi
+ * @extends {BaseAPI}
  */
 export class ProfileApi extends BaseAPI {
   /**
@@ -396,6 +406,7 @@ export class ProfileApi extends BaseAPI {
    * @summary Fetch profile details of the personal account
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof ProfileApi
    */
   public showProfile(options?: RawAxiosRequestConfig) {
     return ProfileApiFp(this.configuration)
@@ -408,6 +419,7 @@ export class ProfileApi extends BaseAPI {
    * @summary Retrieve an unlimited auth token
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof ProfileApi
    */
   public tokenProfile(options?: RawAxiosRequestConfig) {
     return ProfileApiFp(this.configuration)
@@ -421,6 +433,7 @@ export class ProfileApi extends BaseAPI {
    * @param {ProfileApiUpdateProfileRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof ProfileApi
    */
   public updateProfile(
     requestParameters: ProfileApiUpdateProfileRequest,

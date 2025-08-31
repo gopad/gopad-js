@@ -12,6 +12,16 @@
  * Do not edit the class manually.
  */
 
+/**
+ *
+ * @export
+ * @interface DeleteUserFromGroupRequest
+ */
 export interface DeleteUserFromGroupRequest {
+  /**
+   *
+   * @type {string}
+   * @memberof DeleteUserFromGroupRequest
+   */
   group: string;
 }
