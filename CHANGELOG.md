@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.16.0](https://github.com/gopad/gopad-js/compare/v2.15.0...v2.16.0) (2025-09-01)
+
+
+### Features
+
+* automated openapi client update ([54989ed](https://github.com/gopad/gopad-js/commit/54989ed478cc51a6e088f7ae0f753a70ed013610))
+* automated openapi client update ([57a6acc](https://github.com/gopad/gopad-js/commit/57a6acceb9e951c38b1a5154fecf0a0e348fcd9a))
+* **deps:** update dependency @types/node to 12.11.5 - 22.18 ([#196](https://github.com/gopad/gopad-js/issues/196)) ([4c48853](https://github.com/gopad/gopad-js/commit/4c4885347f8aace5678382ff90d4d16ae6941984))
+
 ## [2.15.0](https://github.com/gopad/gopad-js/compare/v2.14.0...v2.15.0) (2025-08-04)
 
 
