@@ -19,10 +19,40 @@ import type { Group } from "./group";
 // @ts-ignore
 import type { UserGroup } from "./user-group";
 
-export interface ListGroupUsers200Response {
+/**
+ *
+ * @export
+ * @interface InlineObject2
+ */
+export interface InlineObject2 {
+  /**
+   *
+   * @type {number}
+   * @memberof InlineObject2
+   */
   total: number;
+  /**
+   *
+   * @type {number}
+   * @memberof InlineObject2
+   */
   limit: number;
+  /**
+   *
+   * @type {number}
+   * @memberof InlineObject2
+   */
   offset: number;
+  /**
+   *
+   * @type {Group}
+   * @memberof InlineObject2
+   */
   group?: Group;
+  /**
+   *
+   * @type {Array<UserGroup>}
+   * @memberof InlineObject2
+   */
   users: Array<UserGroup>;
 }
