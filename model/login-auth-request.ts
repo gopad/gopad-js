@@ -12,7 +12,22 @@
  * Do not edit the class manually.
  */
 
+/**
+ *
+ * @export
+ * @interface LoginAuthRequest
+ */
 export interface LoginAuthRequest {
+  /**
+   *
+   * @type {string}
+   * @memberof LoginAuthRequest
+   */
   username: string;
+  /**
+   *
+   * @type {string}
+   * @memberof LoginAuthRequest
+   */
   password: string;
 }

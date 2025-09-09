@@ -14,11 +14,36 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Group } from "./group";
+import type { User } from "./user";
 
-export interface ListGroups200Response {
+/**
+ *
+ * @export
+ * @interface InlineObject3
+ */
+export interface InlineObject3 {
+  /**
+   *
+   * @type {number}
+   * @memberof InlineObject3
+   */
   total: number;
+  /**
+   *
+   * @type {number}
+   * @memberof InlineObject3
+   */
   limit: number;
+  /**
+   *
+   * @type {number}
+   * @memberof InlineObject3
+   */
   offset: number;
-  groups: Array<Group>;
+  /**
+   *
+   * @type {Array<User>}
+   * @memberof InlineObject3
+   */
+  users: Array<User>;
 }

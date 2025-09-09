@@ -12,7 +12,22 @@
  * Do not edit the class manually.
  */
 
+/**
+ *
+ * @export
+ * @interface PermitUserGroupRequest
+ */
 export interface PermitUserGroupRequest {
+  /**
+   *
+   * @type {string}
+   * @memberof PermitUserGroupRequest
+   */
   group: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PermitUserGroupRequest
+   */
   perm: string;
 }
