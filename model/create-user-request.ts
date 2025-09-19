@@ -12,46 +12,11 @@
  * Do not edit the class manually.
  */
 
-/**
- *
- * @export
- * @interface CreateUserRequest
- */
 export interface CreateUserRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof CreateUserRequest
-   */
   username?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateUserRequest
-   */
   password?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateUserRequest
-   */
   email?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateUserRequest
-   */
   fullname?: string | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof CreateUserRequest
-   */
   admin?: boolean | null;
-  /**
-   *
-   * @type {boolean}
-   * @memberof CreateUserRequest
-   */
   active?: boolean | null;
 }
