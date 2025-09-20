@@ -12,7 +12,22 @@
  * Do not edit the class manually.
  */
 
+/**
+ *
+ * @export
+ * @interface AuthToken
+ */
 export interface AuthToken {
+  /**
+   *
+   * @type {string}
+   * @memberof AuthToken
+   */
   token: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AuthToken
+   */
   expires_at?: string | null;
 }

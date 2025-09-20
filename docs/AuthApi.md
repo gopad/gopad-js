@@ -72,7 +72,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listProviders**
-> ListProviders200Response listProviders()
+> InlineObject listProviders()
 
 
 ### Example
@@ -95,7 +95,7 @@ This endpoint does not have any parameters.
 
 ### Return type
 
-**ListProviders200Response**
+**InlineObject**
 
 ### Authorization
 

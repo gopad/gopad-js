@@ -14,10 +14,32 @@
 
 /**
  * Model to represent user auth
+ * @export
+ * @interface UserAuth
  */
 export interface UserAuth {
+  /**
+   *
+   * @type {string}
+   * @memberof UserAuth
+   */
   provider?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof UserAuth
+   */
   ref?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof UserAuth
+   */
   created_at?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof UserAuth
+   */
   updated_at?: string;
 }
