@@ -243,7 +243,7 @@ const { status, data } = await apiInstance.deleteUserFromGroup(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listUserGroups**
-> ListUserGroups200Response listUserGroups()
+> InlineObject4 listUserGroups()
 
 
 ### Example
@@ -288,7 +288,7 @@ const { status, data } = await apiInstance.listUserGroups(
 
 ### Return type
 
-**ListUserGroups200Response**
+**InlineObject4**
 
 ### Authorization
 
@@ -311,7 +311,7 @@ const { status, data } = await apiInstance.listUserGroups(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listUsers**
-> ListUsers200Response listUsers()
+> InlineObject3 listUsers()
 
 
 ### Example
@@ -353,7 +353,7 @@ const { status, data } = await apiInstance.listUsers(
 
 ### Return type
 
-**ListUsers200Response**
+**InlineObject3**
 
 ### Authorization
 

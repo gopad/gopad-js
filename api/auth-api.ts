@@ -46,7 +46,7 @@ import type { AuthToken } from "../model";
 // @ts-ignore
 import type { AuthVerify } from "../model";
 // @ts-ignore
-import type { ListProviders200Response } from "../model";
+import type { InlineObject } from "../model";
 // @ts-ignore
 import type { LoginAuthRequest } from "../model";
 // @ts-ignore
@@ -55,6 +55,7 @@ import type { Notification } from "../model";
 import type { RedirectAuthRequest } from "../model";
 /**
  * AuthApi - axios parameter creator
+ * @export
  */
 export const AuthApiAxiosParamCreator = function (
   configuration?: Configuration,
@@ -420,6 +421,7 @@ export const AuthApiAxiosParamCreator = function (
 
 /**
  * AuthApi - functional programming interface
+ * @export
  */
 export const AuthApiFp = function (configuration?: Configuration) {
   const localVarAxiosParamCreator = AuthApiAxiosParamCreator(configuration);
@@ -470,10 +472,7 @@ export const AuthApiFp = function (configuration?: Configuration) {
     async listProviders(
       options?: RawAxiosRequestConfig,
     ): Promise<
-      (
-        axios?: AxiosInstance,
-        basePath?: string,
-      ) => AxiosPromise<ListProviders200Response>
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineObject>
     > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.listProviders(options);
@@ -635,6 +634,7 @@ export const AuthApiFp = function (configuration?: Configuration) {
 
 /**
  * AuthApi - factory interface
+ * @export
  */
 export const AuthApiFactory = function (
   configuration?: Configuration,
@@ -669,9 +669,7 @@ export const AuthApiFactory = function (
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listProviders(
-      options?: RawAxiosRequestConfig,
-    ): AxiosPromise<ListProviders200Response> {
+    listProviders(options?: RawAxiosRequestConfig): AxiosPromise<InlineObject> {
       return localVarFp
         .listProviders(options)
         .then((request) => request(axios, basePath));
@@ -748,56 +746,79 @@ export const AuthApiFactory = function (
 
 /**
  * Request parameters for callbackProvider operation in AuthApi.
+ * @export
+ * @interface AuthApiCallbackProviderRequest
  */
 export interface AuthApiCallbackProviderRequest {
   /**
    * An identifier for the auth provider
+   * @type {string}
+   * @memberof AuthApiCallbackProvider
    */
   readonly provider: string;
 
   /**
    * Auth state
+   * @type {string}
+   * @memberof AuthApiCallbackProvider
    */
   readonly state?: string;
 
   /**
    * Auth code
+   * @type {string}
+   * @memberof AuthApiCallbackProvider
    */
   readonly code?: string;
 }
 
 /**
  * Request parameters for loginAuth operation in AuthApi.
+ * @export
+ * @interface AuthApiLoginAuthRequest
  */
 export interface AuthApiLoginAuthRequest {
   /**
    * The credentials to authenticate
+   * @type {LoginAuthRequest}
+   * @memberof AuthApiLoginAuth
    */
   readonly loginAuthRequest: LoginAuthRequest;
 }
 
 /**
  * Request parameters for redirectAuth operation in AuthApi.
+ * @export
+ * @interface AuthApiRedirectAuthRequest
  */
 export interface AuthApiRedirectAuthRequest {
   /**
    * The redirect token to authenticate
+   * @type {RedirectAuthRequest}
+   * @memberof AuthApiRedirectAuth
    */
   readonly redirectAuthRequest: RedirectAuthRequest;
 }
 
 /**
  * Request parameters for requestProvider operation in AuthApi.
+ * @export
+ * @interface AuthApiRequestProviderRequest
  */
 export interface AuthApiRequestProviderRequest {
   /**
    * An identifier for the auth provider
+   * @type {string}
+   * @memberof AuthApiRequestProvider
    */
   readonly provider: string;
 }
 
 /**
  * AuthApi - object-oriented interface
+ * @export
+ * @class AuthApi
+ * @extends {BaseAPI}
  */
 export class AuthApi extends BaseAPI {
   /**
@@ -806,6 +827,7 @@ export class AuthApi extends BaseAPI {
    * @param {AuthApiCallbackProviderRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof AuthApi
    */
   public callbackProvider(
     requestParameters: AuthApiCallbackProviderRequest,
@@ -826,6 +848,7 @@ export class AuthApi extends BaseAPI {
    * @summary Fetch the available auth providers
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof AuthApi
    */
   public listProviders(options?: RawAxiosRequestConfig) {
     return AuthApiFp(this.configuration)
@@ -839,6 +862,7 @@ export class AuthApi extends BaseAPI {
    * @param {AuthApiLoginAuthRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof AuthApi
    */
   public loginAuth(
     requestParameters: AuthApiLoginAuthRequest,
@@ -855,6 +879,7 @@ export class AuthApi extends BaseAPI {
    * @param {AuthApiRedirectAuthRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof AuthApi
    */
   public redirectAuth(
     requestParameters: AuthApiRedirectAuthRequest,
@@ -870,6 +895,7 @@ export class AuthApi extends BaseAPI {
    * @summary Refresh an auth token before it expires
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof AuthApi
    */
   public refreshAuth(options?: RawAxiosRequestConfig) {
     return AuthApiFp(this.configuration)
@@ -883,6 +909,7 @@ export class AuthApi extends BaseAPI {
    * @param {AuthApiRequestProviderRequest} requestParameters Request parameters.
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof AuthApi
    */
   public requestProvider(
     requestParameters: AuthApiRequestProviderRequest,
@@ -898,6 +925,7 @@ export class AuthApi extends BaseAPI {
    * @summary Verify validity for an authentication token
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
+   * @memberof AuthApi
    */
   public verifyAuth(options?: RawAxiosRequestConfig) {
     return AuthApiFp(this.configuration)
