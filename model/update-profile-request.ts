@@ -12,34 +12,9 @@
  * Do not edit the class manually.
  */
 
-/**
- *
- * @export
- * @interface UpdateProfileRequest
- */
 export interface UpdateProfileRequest {
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateProfileRequest
-   */
   username?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateProfileRequest
-   */
   password?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateProfileRequest
-   */
   email?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof UpdateProfileRequest
-   */
   fullname?: string | null;
 }
