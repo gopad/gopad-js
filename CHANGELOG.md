@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.0.0](https://github.com/gopad/gopad-js/compare/v2.19.0...v3.0.0) (2025-11-03)
+
+
+### Features
+
+* automated openapi client update ([0f5348b](https://github.com/gopad/gopad-js/commit/0f5348b71c3d4c94378d62f281b2b78a57d60775))
+* **deps:** update dependency @types/node to 12.11.5 - 24.10 ([#214](https://github.com/gopad/gopad-js/issues/214)) ([da9a0c3](https://github.com/gopad/gopad-js/commit/da9a0c3f02923a5d9008bdfa16f17044190fd6af))
+* **deps:** update dependency @types/node to v24 ([#211](https://github.com/gopad/gopad-js/issues/211)) ([9c108a0](https://github.com/gopad/gopad-js/commit/9c108a0679bcf236262a41308c10dd361ca88aa3))
+* **deps:** update dependency axios to v1.13.0 ([#209](https://github.com/gopad/gopad-js/issues/209)) ([b29db4b](https://github.com/gopad/gopad-js/commit/b29db4b96f07227e4623abf0bb3095d92bca921f))
+
+
+### Bugfixes
+
+* **deps:** update dependency axios to v1.13.1 ([#212](https://github.com/gopad/gopad-js/issues/212)) ([22e154b](https://github.com/gopad/gopad-js/commit/22e154b38faca39403d46e5ea459cb0212e634f4))
+
 ## [2.19.0](https://github.com/gopad/gopad-js/compare/v2.18.0...v2.19.0) (2025-10-13)
 
 
