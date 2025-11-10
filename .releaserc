@@ -177,6 +177,7 @@
                 "message": "chore: release ${nextRelease.version}",
                 "assets": [
                     "CHANGELOG.md",
+                    ".github/RELEASE",
                     "package.json",
                     "openapi.yml",
                     "README.md",
