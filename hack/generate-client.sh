@@ -8,13 +8,12 @@ else
     ROOT=$(realpath -e "$(dirname "${0}")/..")
 fi
 
-if ! hash openapi-generator-cli 2>/dev/null; then
-    echo "missing openapi-generator-cli executable"
-    exit 1
-fi
-
 SPEC_VERSION="1.0.0-alpha1"
 SPEC_DOWNLOAD=${SPEC:-https://dl.gopad.eu/openapi/${SPEC_VERSION}.yaml}
+
+curl -sSLo "${ROOT}/hack/wrapped-client.sh" \
+    https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh && \
+    chmod +x "${ROOT}/hack/wrapped-client.sh"
 
 pushd "${ROOT}" >/dev/null
     echo "> deleting apis and models"
@@ -22,7 +21,7 @@ pushd "${ROOT}" >/dev/null
 
     export TS_POST_PROCESS_FILE="npx prettier -w"
 
-    openapi-generator-cli \
+    OPENAPI_GENERATOR_VERSION=7.17.0 "${ROOT}/hack/wrapped-client.sh" \
         generate \
         -c openapi.yml \
         -g typescript-axios \
