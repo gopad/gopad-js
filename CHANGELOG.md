@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/gopad/gopad-js/compare/v3.0.1...v3.1.0) (2025-11-17)
+
+
+### Features
+
+* automated openapi client update ([372d8cc](https://github.com/gopad/gopad-js/commit/372d8cc7805fe7f9ae64bf36cf3f23495016140c))
+* **minor:** update dependency typescript to ^5.9.3 ([#218](https://github.com/gopad/gopad-js/issues/218)) ([cc1bba9](https://github.com/gopad/gopad-js/commit/cc1bba9940400a12baeebcadced18093a3571e33))
+
+
+### Bugfixes
+
+* **patch:** update dependency @types/node to v24.10.1 ([#219](https://github.com/gopad/gopad-js/issues/219)) ([886497e](https://github.com/gopad/gopad-js/commit/886497e037bd4d5e5b583e8d4b97927c199f21a1))
+
 ## [3.0.1](https://github.com/gopad/gopad-js/compare/v3.0.0...v3.0.1) (2025-11-10)
 
 
