@@ -27,12 +27,18 @@ jobs:
           installation_retrieval_payload: ${{ secrets.TOKEN_EXCHANGE_INSTALL }}
           private_key: ${{ secrets.TOKEN_EXCHANGE_KEY }}
           permissions: >-
-            {"contents": "write", "pull_requests": "write", "issues": "write"}
+            {"contents": "write"}
 
       - name: Checkout source
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
         with:
           token: ${{ steps.token.outputs.token }}
+
+      - name: Setup nodejs
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
+        with:
+          node-version: lts/*
+          cache: npm
 
       - name: Write buildtime
         run: date >| .github/RELEASE
@@ -40,15 +46,17 @@ jobs:
       - name: Install releaser
         run: |
           npm install -g \
-            conventional-changelog-conventionalcommits@6.1.0 \
-            semantic-release@23.1.1 \
+            conventional-changelog-conventionalcommits \
+            semantic-release@25.0.2 \
             @semantic-release/changelog \
             @semantic-release/git \
+            @semantic-release/github \
+            @semantic-release/npm \
             semantic-release-replace-plugin
 
       - name: Run releaser
         env:
-          GITHUB_TOKEN: ${{ steps.token.outputs.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: semantic-release
 
       - name: Update repo
