@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.2](https://github.com/gopad/gopad-js/compare/v3.2.1...v3.2.2) (2025-12-15)
+
+### Bugfixes
+
+* **patch:** update dependency @types/node to v24.10.2 ([#237](https://github.com/gopad/gopad-js/issues/237)) ([e6c2f37](https://github.com/gopad/gopad-js/commit/e6c2f37c4f64fc515cceed6ac06f15ee5ee28f65))
+* **patch:** update dependency @types/node to v24.10.3 ([#238](https://github.com/gopad/gopad-js/issues/238)) ([4e9b033](https://github.com/gopad/gopad-js/commit/4e9b03310ccd7f61f1bdc75e59c3fa0d35beedf9))
+
 ## [3.2.1](https://github.com/gopad/gopad-js/compare/v3.2.0...v3.2.1) (2025-12-08)
 
 ### Bugfixes
