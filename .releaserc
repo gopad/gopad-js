@@ -188,8 +188,9 @@
         [
             "@semantic-release/github",
             {
-                "publish": true,
-                "assets": "dist/*.tgz"
+                "assets": [
+                    "dist/*.tgz"
+                ]
             }
         ]
     ]
