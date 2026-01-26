@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.3.1](https://github.com/gopad/gopad-js/compare/v3.3.0...v3.3.1) (2026-01-26)
+
+### Dependencies
+
+* **patch:** update dependency prettier to v3.8.1 ([#248](https://github.com/gopad/gopad-js/issues/248)) ([73e2c02](https://github.com/gopad/gopad-js/commit/73e2c023cf38348d1c2ce6c922b715fc0f5f9a12))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([f68b528](https://github.com/gopad/gopad-js/commit/f68b52820cbd25eb225403928ea9091b075650c5))
+
 ## [3.3.0](https://github.com/gopad/gopad-js/compare/v3.2.3...v3.3.0) (2026-01-19)
 
 ### Dependencies
