@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.3.4](https://github.com/gopad/gopad-js/compare/v3.3.3...v3.3.4) (2026-02-16)
+
+### Dependencies
+
+* **patch:** update dependency @types/node to v24.10.12 ([#253](https://github.com/gopad/gopad-js/issues/253)) ([e93455b](https://github.com/gopad/gopad-js/commit/e93455b0219cf365960fc0bb33429bf5d6d69672))
+* **patch:** update dependency @types/node to v24.10.13 ([#255](https://github.com/gopad/gopad-js/issues/255)) ([46b667e](https://github.com/gopad/gopad-js/commit/46b667ebcb2a5deb3388785f714b149b156cf9f6))
+
+### Miscellaneous
+
+* **deps:** bump axios from 1.13.4 to 1.13.5 ([64df2fd](https://github.com/gopad/gopad-js/commit/64df2fdbb820fc43b63ddb8bdf95859f34bad5c8))
+* **flake:** updated lockfile [skip ci] ([6677a4e](https://github.com/gopad/gopad-js/commit/6677a4e89071b249359ffe13875425ebbf5b55b2))
+
 ## [3.3.3](https://github.com/gopad/gopad-js/compare/v3.3.2...v3.3.3) (2026-02-09)
 
 ### Dependencies
