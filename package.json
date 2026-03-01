@@ -34,7 +34,7 @@
     "axios": "^1.6.1"
   },
   "devDependencies": {
-    "@types/node": "24.10.14",
+    "@types/node": "24.10.15",
     "prettier": "3.8.1",
     "typescript": "5.9.3"
   },
