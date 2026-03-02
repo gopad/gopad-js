@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.3.5](https://github.com/gopad/gopad-js/compare/v3.3.4...v3.3.5) (2026-03-02)
+
+### Dependencies
+
+* **deps:** lock file maintenance ([74fd410](https://github.com/gopad/gopad-js/commit/74fd410a29117bc4aaf5c80980d202cbc3bd5c2f))
+* **patch:** update dependency @types/node to v24.10.14 ([#257](https://github.com/gopad/gopad-js/issues/257)) ([357ecab](https://github.com/gopad/gopad-js/commit/357ecab577414deae052e605f85c9d2e5da8d2b8))
+* **patch:** update dependency @types/node to v24.10.15 ([#258](https://github.com/gopad/gopad-js/issues/258)) ([2ea9610](https://github.com/gopad/gopad-js/commit/2ea96109e558425018d3cacd7e8641e3fed520f6))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([8813495](https://github.com/gopad/gopad-js/commit/8813495d5eef246551442bf77a91087e040b1bc2))
+* **flake:** updated lockfile [skip ci] ([6b031a7](https://github.com/gopad/gopad-js/commit/6b031a7d29d0a2dfd5db1490fb7f60828d7a1648))
+* **locks:** lock file maintenance ([#259](https://github.com/gopad/gopad-js/issues/259)) ([582d1d9](https://github.com/gopad/gopad-js/commit/582d1d9b5d7e1a011b22c505ee13c9ce0201983a))
+* replace nixfmt package ([d01401a](https://github.com/gopad/gopad-js/commit/d01401a902decc21f7fc80b32998eec2f4eb4f64))
+
 ## [3.3.4](https://github.com/gopad/gopad-js/compare/v3.3.3...v3.3.4) (2026-02-16)
 
 ### Dependencies
