@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.4.0](https://github.com/gopad/gopad-js/compare/v3.3.5...v3.4.0) (2026-03-09)
+
+### Dependencies
+
+* **minor:** update dependency @types/node to v24.11.0 ([#260](https://github.com/gopad/gopad-js/issues/260)) ([796adfb](https://github.com/gopad/gopad-js/commit/796adfb2050ecfefe6495f023d5f04079d61a3d9))
+* **patch:** update dependency @types/node to v24.11.2 ([#261](https://github.com/gopad/gopad-js/issues/261)) ([a071f23](https://github.com/gopad/gopad-js/commit/a071f23485013fdff35374745db2614fbe24d28f))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([de2f87f](https://github.com/gopad/gopad-js/commit/de2f87f90fbffeee39e660f31a68442a44bff58a))
+
 ## [3.3.5](https://github.com/gopad/gopad-js/compare/v3.3.4...v3.3.5) (2026-03-02)
 
 ### Dependencies
