@@ -1,15 +1,23 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "target": "ES6",
+    "target": "{{#supportsES6}}ES6{{/supportsES6}}{{^supportsES6}}ES5{{/supportsES6}}",
     "module": "node16",
     "noImplicitAny": true,
     "outDir": "dist",
     "rootDir": ".",
+    {{#supportsES6}}
     "moduleResolution": "node16",
     "types": [
       "node"
     ],
+    {{/supportsES6}}
+    {{^supportsES6}}
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    {{/supportsES6}}
     "typeRoots": [
       "node_modules/@types"
     ]
