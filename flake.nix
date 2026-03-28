@@ -71,6 +71,7 @@
                 };
 
                 packages = with pkgs; [
+                  bash
                   curl
                   jq
                   maven
