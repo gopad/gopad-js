@@ -21,7 +21,7 @@ pushd "${ROOT}" >/dev/null
 
     export TS_POST_PROCESS_FILE="npx prettier -w"
 
-    OPENAPI_GENERATOR_VERSION=7.17.0 "${ROOT}/hack/wrapped-client.sh" \
+    OPENAPI_GENERATOR_VERSION=7.21.0 "${ROOT}/hack/wrapped-client.sh" \
         generate \
         -c openapi.yml \
         -g typescript-axios \
