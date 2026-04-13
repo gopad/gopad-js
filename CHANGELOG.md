@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.1.0](https://github.com/gopad/gopad-js/compare/v4.0.0...v4.1.0) (2026-04-13)
+
+### Dependencies
+
+* **minor:** update dependency axios to v1.15.0 ([#269](https://github.com/gopad/gopad-js/issues/269)) ([0062a73](https://github.com/gopad/gopad-js/commit/0062a73753a5dc7fcda5ac49d1698e4a85e3dd31))
+* **patch:** update dependency @types/node to v24.12.2 ([#267](https://github.com/gopad/gopad-js/issues/267)) ([e66d83f](https://github.com/gopad/gopad-js/commit/e66d83f8d6fb3a40dde1b0eb899360403b511ec7))
+* **patch:** update dependency prettier to v3.8.2 ([#270](https://github.com/gopad/gopad-js/issues/270)) ([93b9773](https://github.com/gopad/gopad-js/commit/93b9773ad18d53ea23666063df8288ae231520c3))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([dfdd868](https://github.com/gopad/gopad-js/commit/dfdd8684cf5d7a829c267629988363378e2f011c))
+* **flake:** updated lockfile [skip ci] ([664b02e](https://github.com/gopad/gopad-js/commit/664b02e35e2d42675286063e373019b7adffd0b6))
+
 ## [4.0.0](https://github.com/gopad/gopad-js/compare/v3.5.0...v4.0.0) (2026-03-30)
 
 ### Dependencies
