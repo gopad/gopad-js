@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.1.2](https://github.com/gopad/gopad-js/compare/v4.1.1...v4.1.2) (2026-04-27)
+
+### Dependencies
+
+* **patch:** update dependency axios to v1.15.2 ([#275](https://github.com/gopad/gopad-js/issues/275)) ([68e40e5](https://github.com/gopad/gopad-js/commit/68e40e5fd1a6904b6eecb51f7180cee6f085ec44))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([061d5bf](https://github.com/gopad/gopad-js/commit/061d5bf9313d5aea1320156bf1a612ba7b430da1))
+
 ## [4.1.1](https://github.com/gopad/gopad-js/compare/v4.1.0...v4.1.1) (2026-04-20)
 
 ### Dependencies
