@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.2.0](https://github.com/gopad/gopad-js/compare/v4.1.4...v4.2.0) (2026-06-08)
+
+### Dependencies
+
+* **minor:** update dependency @types/node to v24.13.0 ([#283](https://github.com/gopad/gopad-js/issues/283)) ([4340935](https://github.com/gopad/gopad-js/commit/43409358c1e4535ac85da75e6ee54f9c5501dd15))
+* **minor:** update dependency axios to v1.17.0 ([#282](https://github.com/gopad/gopad-js/issues/282)) ([c1bea20](https://github.com/gopad/gopad-js/commit/c1bea20b4d8dbcd8344fd85ed0402172f3f1bd51))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([e08ee6a](https://github.com/gopad/gopad-js/commit/e08ee6a6a1a2eb52ea8339935ddd920eb33d5fcb))
+* **flake:** updated lockfile [skip ci] ([5af0d86](https://github.com/gopad/gopad-js/commit/5af0d864a56471501da1bbb91265f9a5ce6cf115))
+* **flake:** updated lockfile [skip ci] ([ac3c704](https://github.com/gopad/gopad-js/commit/ac3c7040fd0ee0ad6de85a62db8ed6817bd7d183))
+* **locks:** lock file maintenance ([#280](https://github.com/gopad/gopad-js/issues/280)) ([224c6f8](https://github.com/gopad/gopad-js/commit/224c6f8dab5a637099a5280e8d1593134da22380))
+* **locks:** lock file maintenance ([#281](https://github.com/gopad/gopad-js/issues/281)) ([42b97ef](https://github.com/gopad/gopad-js/commit/42b97efd2e58c30944a25b922f291bec7096e203))
+
 ## [4.1.4](https://github.com/gopad/gopad-js/compare/v4.1.3...v4.1.4) (2026-05-18)
 
 ### Dependencies
