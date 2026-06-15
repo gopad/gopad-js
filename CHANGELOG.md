@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.2.1](https://github.com/gopad/gopad-js/compare/v4.2.0...v4.2.1) (2026-06-15)
+
+### Dependencies
+
+* **patch:** update dependency @types/node to v24.13.1 ([#284](https://github.com/gopad/gopad-js/issues/284)) ([9906143](https://github.com/gopad/gopad-js/commit/9906143130a0a5df0bdfb5901cdc873b09d9e114))
+* **patch:** update dependency @types/node to v24.13.2 ([#286](https://github.com/gopad/gopad-js/issues/286)) ([d636579](https://github.com/gopad/gopad-js/commit/d6365799864a7bc754302408ddde15a9cb045aec))
+* **patch:** update dependency prettier to v3.8.4 ([#285](https://github.com/gopad/gopad-js/issues/285)) ([69082a7](https://github.com/gopad/gopad-js/commit/69082a7e494286f29510a7fe8ee472d414a84237))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([62da06d](https://github.com/gopad/gopad-js/commit/62da06d980c433bdf65537143f05983abeb8953c))
+* **locks:** lock file maintenance ([#287](https://github.com/gopad/gopad-js/issues/287)) ([c05bd23](https://github.com/gopad/gopad-js/commit/c05bd230f66c33c356004ce192adee17d66848fe))
+
 ## [4.2.0](https://github.com/gopad/gopad-js/compare/v4.1.4...v4.2.0) (2026-06-08)
 
 ### Dependencies
