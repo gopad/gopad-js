@@ -1,5 +1,7 @@
 # Changelog
 
+## [4.3.0](https://github.com/gopad/gopad-js/compare/v4.2.2...v4.3.0) (2026-07-06)
+
 ## [4.2.2](https://github.com/gopad/gopad-js/compare/v4.2.1...v4.2.2) (2026-06-29)
 
 ## [4.2.1](https://github.com/gopad/gopad-js/compare/v4.2.0...v4.2.1) (2026-06-15)
