@@ -1,9 +1,10 @@
-.direnv/
-.devenv/
+mise.local.toml
 
 typings/
 dist/
 node_modules/
 
-.pre-commit-config.yaml
 openapitools.json
+
+hack/wrapped-client.sh
+hack/*.jar
