@@ -4,4 +4,4 @@
 java = "26.0.2"
 maven = "3.9.16"
 node = "24"
-pre-commit = "4.6.1"
+pre-commit = "4.6.2"
